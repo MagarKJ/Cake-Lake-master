@@ -79,13 +79,12 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                   ),
                 ),
                 SmoothPageIndicator(
-                  controller: pageController,
-                  count: 3,
-                  effect: const SwapEffect(
-                      activeDotColor: Colors.black,
-                      dotWidth: 10,
-                      dotHeight: 10),
-                ),
+                    controller: pageController,
+                    count: 3,
+                    effect: const WormEffect(
+                        activeDotColor: Colors.black,
+                        dotHeight: 10,
+                        dotWidth: 10)),
                 SizedBox(
                   width: Get.width * 0.25,
                   child: TextButton(
