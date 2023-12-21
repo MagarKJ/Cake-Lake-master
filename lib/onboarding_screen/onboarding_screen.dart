@@ -81,7 +81,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                 SmoothPageIndicator(
                   controller: pageController,
                   count: 3,
-                  effect: const JumpingDotEffect(
+                  effect: const SwapEffect(
                       activeDotColor: Colors.black,
                       dotWidth: 10,
                       dotHeight: 10),
