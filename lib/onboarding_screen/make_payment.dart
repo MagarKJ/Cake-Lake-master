@@ -20,7 +20,11 @@ class MakePayment extends StatelessWidget {
                   height: Get.height * 0.55,
                   child: Column(
                     children: [
-                      Image.asset('assets/splash_screen/Sales_consulting.jpg'),
+                      Image.asset(
+                        'assets/splash_screen/Sales_consulting.jpg',
+                        height: Get.height * 0.28,
+                        width: Get.width * 0.86,
+                      ),
                       SizedBox(
                         height: Get.height * 0.06,
                       ),
@@ -30,7 +34,7 @@ class MakePayment extends StatelessWidget {
                             GoogleFonts.jost(fontSize: 22, color: Colors.brown),
                       ),
                       SizedBox(
-                        width: Get.width * 0.9,
+                        width: Get.width * 0.86,
                         child: Text(
                           'Complete your purchase by proceeding to checkout and entering payment details securely. Confirm the transaction to finalize and receive your order promptly.',
                           textAlign: TextAlign.center,

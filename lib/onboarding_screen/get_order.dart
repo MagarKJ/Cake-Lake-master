@@ -20,7 +20,11 @@ class GetOrder extends StatelessWidget {
                   height: Get.height * 0.65,
                   child: Column(
                     children: [
-                      Image.asset('assets/splash_screen/Shopping_bag.jpg'),
+                      Image.asset(
+                        'assets/splash_screen/Shopping_bag.jpg',
+                        height: Get.height * 0.43,
+                        width: Get.width * 0.83,
+                      ),
                       SizedBox(
                         height: Get.height * 0.04,
                       ),
@@ -30,7 +34,7 @@ class GetOrder extends StatelessWidget {
                             GoogleFonts.jost(fontSize: 22, color: Colors.brown),
                       ),
                       SizedBox(
-                          width: Get.width * 0.9,
+                          width: Get.width * 0.83,
                           child: Text(
                             'Track your order status effortlessly. Use the order number provided to check real-time updates on delivery and expected arrival.',
                             textAlign: TextAlign.center,

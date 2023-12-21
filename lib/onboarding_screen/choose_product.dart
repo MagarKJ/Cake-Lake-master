@@ -28,7 +28,7 @@ class ChooseProduct extends StatelessWidget {
                       ),
                       SizedBox(
                         height: Get.height * 0.1,
-                        width: Get.width * 0.90,
+                        width: Get.width * 0.86,
                         child: Text(
                           'Select the product type that aligns with your needs, ensuring it meets specifications, functionality, and budgetary considerations. Evaluate features and user reviews for informed decision-making.',
                           textAlign: TextAlign.center,

@@ -18,11 +18,11 @@ class _CreateAccountState extends State<CreateAccount> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: Get.height * 0.09,
+              height: Get.height * 0.12,
             ),
             Text(
               "Create an account",
