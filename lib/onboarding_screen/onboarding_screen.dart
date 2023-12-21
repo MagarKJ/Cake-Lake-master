@@ -1,9 +1,10 @@
+import 'package:cakelake/login/create_account_screen.dart';
 import 'package:cakelake/onboarding_screen/choose_product.dart';
 import 'package:cakelake/onboarding_screen/get_order.dart';
 import 'package:cakelake/onboarding_screen/make_payment.dart';
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardScreen extends StatefulWidget {
   const OnBoardScreen({super.key});
@@ -13,7 +14,7 @@ class OnBoardScreen extends StatefulWidget {
 }
 
 class _OnBoardScreenState extends State<OnBoardScreen> {
-  final pageController = PageController(viewportFraction: 0.8, keepPage: true);
+  final _pageController = PageController(viewportFraction: 0.8, keepPage: true);
 
   int currentPage = 0;
 
@@ -33,12 +34,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
               height: Get.height * 0.85,
               child: PageView(
                 physics: const NeverScrollableScrollPhysics(),
-                controller: pageController,
-                onPageChanged: (value) {
-                  setState(() {
-                    currentPage = value;
-                  });
-                },
+                controller: _pageController,
                 children: [screens[currentPage]],
               ),
             ),
@@ -47,28 +43,21 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
               children: [
                 SizedBox(
                   width: Get.width * 0.25,
-                  child: TextButton(
-                    onPressed: () {
-                      if (currentPage == 1 || currentPage == 2) {
-                        pageController.previousPage(
-                          duration: const Duration(milliseconds: 100),
-                          curve: Curves.bounceIn,
-                        );
-                        setState(() {
-                          currentPage = currentPage - 1;
-                        });
-                      }
-                    },
-                    child: currentPage == 0
-                        ? const Text(
-                            '',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey,
-                            ),
-                          )
-                        : const Text(
+                  child: currentPage == 0
+                      ? Container()
+                      : TextButton(
+                          onPressed: () {
+                            if (currentPage == 1 || currentPage == 2) {
+                              _pageController.previousPage(
+                                duration: const Duration(milliseconds: 100),
+                                curve: Curves.bounceIn,
+                              );
+                              setState(() {
+                                currentPage = currentPage - 1;
+                              });
+                            }
+                          },
+                          child: const Text(
                             'Prev',
                             style: TextStyle(
                               fontSize: 18,
@@ -76,21 +65,25 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                               color: Colors.grey,
                             ),
                           ),
+                        ),
+                ),
+                DotsIndicator(
+                  position: currentPage,
+                  dotsCount: 3,
+                  decorator: DotsDecorator(
+                    size: const Size.square(10.0),
+                    activeSize: const Size(20.0, 10.0),
+                    activeColor: Colors.black,
+                    activeShape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5.0)),
                   ),
                 ),
-                SmoothPageIndicator(
-                    controller: pageController,
-                    count: 3,
-                    effect: const WormEffect(
-                        activeDotColor: Colors.black,
-                        dotHeight: 10,
-                        dotWidth: 10)),
                 SizedBox(
                   width: Get.width * 0.25,
                   child: TextButton(
                     onPressed: () {
                       if (currentPage == 0 || currentPage == 1) {
-                        pageController.nextPage(
+                        _pageController.nextPage(
                           duration: const Duration(milliseconds: 100),
                           curve: Curves.bounceIn,
                         );
@@ -99,7 +92,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                         });
                       }
                       if (currentPage == 2) {
-                        // navigate
+                        Get.to(()=> const CreateAccount());
                       }
                     },
                     child: currentPage == 2

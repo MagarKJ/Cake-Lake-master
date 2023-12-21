@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(
           seconds: 2,
         ), () {
-      Get.to(const OnBoardScreen());
+      Get.to(() => const OnBoardScreen());
     });
   }
 
