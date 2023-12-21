@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MakePayment extends StatelessWidget {
   const MakePayment({super.key});
@@ -23,18 +24,17 @@ class MakePayment extends StatelessWidget {
                       SizedBox(
                         height: Get.height * 0.06,
                       ),
-                      const Text(
+                      Text(
                         'Make Payement',
-                        style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold),
+                        style:
+                            GoogleFonts.jost(fontSize: 22, color: Colors.brown),
                       ),
                       SizedBox(
                         width: Get.width * 0.9,
-                        child: const Text(
+                        child: Text(
                           'Complete your purchase by proceeding to checkout and entering payment details securely. Confirm the transaction to finalize and receive your order promptly.',
                           textAlign: TextAlign.center,
+                          style: GoogleFonts.jost(color: Colors.grey),
                         ),
                       )
                     ],
