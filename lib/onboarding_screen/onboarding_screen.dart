@@ -18,11 +18,21 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
 
   int currentPage = 0;
 
+  bool startButtonPressed = false;
+
   dynamic screens = [
     const ChooseProduct(),
     const MakePayment(),
     const GetOrder(),
   ];
+
+  @override
+  void dispose() {
+    // Reset the flag when the screen is disposed (e.g., when navigating back)
+    startButtonPressed = false;
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +64,7 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                               );
                               setState(() {
                                 currentPage = currentPage - 1;
+                                startButtonPressed = false;
                               });
                             }
                           },
@@ -91,8 +102,12 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                           currentPage = currentPage + 1;
                         });
                       }
-                      if (currentPage == 2) {
-                        Get.to(()=> const CreateAccount());
+                      if (currentPage == 2 && startButtonPressed) {
+                        Get.to(() => const CreateAccount());
+                      } else if (currentPage == 2) {
+                        setState(() {
+                          startButtonPressed = true;
+                        });
                       }
                     },
                     child: currentPage == 2
