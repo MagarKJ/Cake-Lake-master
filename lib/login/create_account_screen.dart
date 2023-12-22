@@ -204,7 +204,7 @@ class _CreateAccountState extends State<CreateAccount> {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Get.to(() => const ForgotPassword());
+                                Get.to(() => ForgotPassword());
                                 // Handle button click here
                               },
                           ),

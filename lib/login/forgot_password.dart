@@ -1,4 +1,5 @@
 import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,27 +39,10 @@ class ForgotPassword extends StatelessWidget {
                 SizedBox(
                   height: Get.height * 0.0645,
                   width: Get.width * 0.831,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: myBrownColor),
-                          borderRadius: BorderRadius.circular(3),
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(color: myGrey),
-                          borderRadius: BorderRadius.circular(3),
-                        ),
-                        prefixIcon: Icon(
-                          Icons.mail,
-                          color: myGrey,
-                        ),
-                        hintText: "Enter your Email Address",
-                        hintStyle: GoogleFonts.montserrat(
-                            color: myGrey,
-                            fontSize: 11.43,
-                            fontWeight: FontWeight.w500),
-                        contentPadding: EdgeInsets.symmetric(
-                            vertical: Get.height * 0.0345)),
+                  child: const CustomTextField(
+                    prefixIcon: Icons.mail,
+                    hintText: 'Enter your email address',
+                    obscureText: false,
                   ),
                 ),
                 SizedBox(
