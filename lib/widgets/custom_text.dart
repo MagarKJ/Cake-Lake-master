@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
     return SizedBox(
       height: Get.height * 0.0645,
       child: TextFormField(
-        obscureText: obscureText && showPassword!,
+        obscureText: obscureText && !(showPassword ?? false),
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: myBrownColor),
@@ -38,10 +38,12 @@ class CustomTextField extends StatelessWidget {
           suffixIcon: obscureText
               ? IconButton(
                   onPressed: () {
-                    onTogglePassword!(!showPassword!);
+                    onTogglePassword?.call(!(showPassword ?? false));
                   },
                   icon: Icon(
-                    showPassword! ? Icons.visibility : Icons.visibility_off,
+                    showPassword ?? false
+                        ? Icons.visibility
+                        : Icons.visibility_off,
                     color: myGrey,
                   ),
                 )
