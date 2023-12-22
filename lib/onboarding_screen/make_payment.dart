@@ -1,3 +1,4 @@
+import 'package:cakelake/login/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,15 +31,21 @@ class MakePayment extends StatelessWidget {
                       ),
                       Text(
                         'Make Payement',
-                        style:
-                            GoogleFonts.jost(fontSize: 22, color: Colors.brown),
+                        style: GoogleFonts.jost(
+                          fontSize: 21.33,
+                          color: myBrownColor,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                       SizedBox(
                         width: Get.width * 0.86,
                         child: Text(
                           'Complete your purchase by proceeding to checkout and entering payment details securely. Confirm the transaction to finalize and receive your order promptly.',
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.jost(color: Colors.grey),
+                          style: GoogleFonts.jost(
+                              color: myGrey,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12.44),
                         ),
                       )
                     ],
