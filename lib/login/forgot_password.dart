@@ -1,6 +1,7 @@
 import 'package:cakelake/login/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ForgotPassword extends StatelessWidget {
   const ForgotPassword({super.key});
@@ -14,14 +15,16 @@ class ForgotPassword extends StatelessWidget {
             height: Get.height * 0.25,
           ),
           Padding(
-            padding:
-                EdgeInsets.only(left: Get.width * 0.01, right: Get.width * 0.4),
-            child: Text(
-              "Forgot password?",
-              style: TextStyle(
-                color: myBrownColor,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+            padding: EdgeInsets.only(right: Get.width * 0.32),
+            child: SizedBox(
+              height: Get.height * 0.05,
+              width: Get.width * 0.5,
+              child: Text(
+                "Forgot password?",
+                style: GoogleFonts.jost(
+                    fontSize: 21,
+                    fontWeight: FontWeight.w700,
+                    color: myBrownColor),
               ),
             ),
           ),
@@ -32,22 +35,30 @@ class ForgotPassword extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: Get.width * 0.08),
             child: Column(
               children: [
-                TextFormField(
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: myBrownColor),
-                      borderRadius: BorderRadius.circular(3),
-                    ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: myGrey),
-                      borderRadius: BorderRadius.circular(3),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.mail,
-                      color: myGrey,
-                    ),
-                    hintText: "Enter your Email Address",
-                    hintStyle: TextStyle(color: myGrey),
+                SizedBox(
+                  height: Get.height * 0.0645,
+                  width: Get.width * 0.831,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: myBrownColor),
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(color: myGrey),
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                        prefixIcon: Icon(
+                          Icons.mail,
+                          color: myGrey,
+                        ),
+                        hintText: "Enter your Email Address",
+                        hintStyle: GoogleFonts.montserrat(
+                            color: myGrey,
+                            fontSize: 11.43,
+                            fontWeight: FontWeight.w500),
+                        contentPadding: EdgeInsets.symmetric(
+                            vertical: Get.height * 0.0345)),
                   ),
                 ),
                 SizedBox(
@@ -61,7 +72,10 @@ class ForgotPassword extends StatelessWidget {
                       TextSpan(
                           text:
                               " We will send you a message to set or reset your new password",
-                          style: TextStyle(color: myGrey))
+                          style: GoogleFonts.montserrat(
+                              color: myDarkGrey,
+                              fontSize: 11.43,
+                              fontWeight: FontWeight.w400))
                     ])),
               ],
             ),
@@ -79,9 +93,12 @@ class ForgotPassword extends StatelessWidget {
                 borderRadius: BorderRadius.circular(3),
               ),
             ),
-            child: const Text(
+            child: Text(
               'Submit',
-              style: TextStyle(fontSize: 21),
+              style: GoogleFonts.montserrat(
+                  color: Colors.white,
+                  fontSize: 19.05,
+                  fontWeight: FontWeight.w600),
             ),
           )
         ],

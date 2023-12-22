@@ -1,4 +1,5 @@
 import 'package:cakelake/login/colors.dart';
+import 'package:cakelake/login/forgot_password.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -274,6 +275,7 @@ class _CreateAccountState extends State<CreateAccount> {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
+                                Get.to(() => const ForgotPassword());
                                 // Handle button click here
                               },
                           ),
