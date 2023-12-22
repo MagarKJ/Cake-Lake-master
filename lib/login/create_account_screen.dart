@@ -1,5 +1,6 @@
-import 'package:cakelake/login/colors.dart';
+import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/login/forgot_password.dart';
+import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -49,106 +50,34 @@ class _CreateAccountState extends State<CreateAccount> {
                     width: Get.width * 0.831,
                     child: Column(
                       children: [
-                        SizedBox(
-                          height: Get.height * 0.0645,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: myBrownColor),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: myGrey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              prefixIcon: Icon(
-                                Icons.person,
-                                color: myGrey,
-                              ),
-                              hintText: "Username or Email",
-                              hintStyle: GoogleFonts.montserrat(
-                                  color: myGrey,
-                                  fontSize: 11.43,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
+                        const CustomTextField(
+                          prefixIcon: Icons.person,
+                          hintText: "Username or Email",
+                          obscureText: false,
                         ),
-                        SizedBox(
-                          height: Get.height * 0.04,
+                        SizedBox(height: Get.height * 0.04),
+                        CustomTextField(
+                          prefixIcon: Icons.lock,
+                          hintText: "Password",
+                          obscureText: true,
+                          showPassword: _showPassword,
+                          onTogglePassword: (bool show) {
+                            setState(() {
+                              _showPassword = show;
+                            });
+                          },
                         ),
-                        SizedBox(
-                          height: Get.height * 0.0645,
-                          child: TextFormField(
-                            obscureText: !_showPassword,
-                            decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: myBrownColor),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: myGrey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              prefixIcon: Icon(Icons.lock, color: myGrey),
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _showPassword = !_showPassword;
-                                  });
-                                },
-                                icon: Icon(
-                                  _showPassword
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: myGrey,
-                                ),
-                              ),
-                              hintText: "Password",
-                              hintStyle: GoogleFonts.montserrat(
-                                  color: myGrey,
-                                  fontSize: 11.43,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: Get.height * 0.04,
-                        ),
-                        SizedBox(
-                          height: Get.height * 0.0645,
-                          child: TextFormField(
-                            obscureText: !_showConfirmPassword,
-                            decoration: InputDecoration(
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: myBrownColor),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide(color: myGrey),
-                                borderRadius: BorderRadius.circular(3),
-                              ),
-                              prefixIcon: Icon(Icons.lock, color: myGrey),
-                              suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _showConfirmPassword =
-                                        !_showConfirmPassword;
-                                  });
-                                },
-                                icon: Icon(
-                                  _showConfirmPassword
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: myGrey,
-                                ),
-                              ),
-                              hintText: "Confirm Password",
-                              hintStyle: GoogleFonts.montserrat(
-                                  color: myGrey,
-                                  fontSize: 11.43,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                          ),
+                        SizedBox(height: Get.height * 0.04),
+                        CustomTextField(
+                          prefixIcon: Icons.lock,
+                          hintText: "Confirm Password",
+                          obscureText: true,
+                          showPassword: _showConfirmPassword,
+                          onTogglePassword: (bool show) {
+                            setState(() {
+                              _showConfirmPassword = show;
+                            });
+                          },
                         ),
                       ],
                     ),

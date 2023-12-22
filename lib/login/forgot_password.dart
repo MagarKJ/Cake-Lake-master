@@ -1,4 +1,4 @@
-import 'package:cakelake/login/colors.dart';
+import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
