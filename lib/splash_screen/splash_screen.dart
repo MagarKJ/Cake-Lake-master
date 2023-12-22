@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   width: Get.width * 0.5,
                   child: FadeInImage(
                     placeholder: MemoryImage(kTransparentImage),
-                    fadeOutDuration: const Duration(milliseconds: 100),
+                    fadeOutDuration: const Duration(milliseconds: 150),
                     image: const AssetImage('assets/splash_screen/image1.png'),
                   ),
                 ),
