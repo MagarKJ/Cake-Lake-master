@@ -1,5 +1,6 @@
+import 'package:cakelake/authorization/login.dart';
+import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
-import 'package:cakelake/login/forgot_password.dart';
 import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -125,24 +126,11 @@ class _CreateAccountState extends State<CreateAccount> {
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                ElevatedButton(
+                CustomButton(
+                  buttonText: 'Create Account',
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: myBrownColor,
-                    padding: EdgeInsets.symmetric(
-                        horizontal: Get.width * 0.2,
-                        vertical: Get.height * 0.015),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(3),
-                    ),
-                  ),
-                  child: Text(
-                    "Create Account",
-                    style: GoogleFonts.montserrat(
-                        color: Colors.white,
-                        fontSize: 19.05,
-                        fontWeight: FontWeight.w600),
-                  ),
+                  height: Get.height * 0.015,
+                  width: Get.width * 0.2,
                 ),
                 SizedBox(
                   height: Get.height * 0.05,
@@ -204,7 +192,7 @@ class _CreateAccountState extends State<CreateAccount> {
                             ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
-                                Get.to(() => ForgotPassword());
+                                Get.to(() => const LogIn());
                                 // Handle button click here
                               },
                           ),

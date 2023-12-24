@@ -49,6 +49,7 @@ class CustomTextField extends StatelessWidget {
                 )
               : null,
           hintText: hintText,
+          floatingLabelAlignment: FloatingLabelAlignment.center,
           hintStyle: GoogleFonts.montserrat(
             color: myGrey,
             fontSize: 11.43,

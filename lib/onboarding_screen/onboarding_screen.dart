@@ -1,4 +1,4 @@
-import 'package:cakelake/login/create_account_screen.dart';
+import 'package:cakelake/authorization/sign_up.dart';
 import 'package:cakelake/onboarding_screen/choose_product.dart';
 import 'package:cakelake/onboarding_screen/get_order.dart';
 import 'package:cakelake/onboarding_screen/make_payment.dart';

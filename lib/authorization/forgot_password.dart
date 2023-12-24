@@ -1,3 +1,4 @@
+import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -67,24 +68,12 @@ class ForgotPassword extends StatelessWidget {
           SizedBox(
             height: Get.height * 0.04,
           ),
-          ElevatedButton(
+          CustomButton(
+            buttonText: 'Submit',
             onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(
-                  horizontal: Get.width * 0.3, vertical: Get.height * 0.015),
-              backgroundColor: myBrownColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(3),
-              ),
-            ),
-            child: Text(
-              'Submit',
-              style: GoogleFonts.montserrat(
-                  color: Colors.white,
-                  fontSize: 19.05,
-                  fontWeight: FontWeight.w600),
-            ),
-          )
+            width: Get.width * 0.2,
+            height: Get.height * 0.015,
+          ),
         ],
       ),
     );
