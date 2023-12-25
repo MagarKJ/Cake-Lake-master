@@ -68,6 +68,8 @@ flutter:
   assets:
     - assets/splash_screen/
     - assets/image/
+    - assets/image/banner/
+    - assets/image/new_arrival/
 
 
   # The following line ensures that the Material Icons font is

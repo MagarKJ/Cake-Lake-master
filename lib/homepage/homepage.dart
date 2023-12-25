@@ -1,3 +1,10 @@
+import 'package:cakelake/bottomnav/bottomnav.dart';
+import 'package:cakelake/homepage/banners/banner.dart';
+import 'package:cakelake/homepage/bigyapan.dart';
+import 'package:cakelake/homepage/newarrival/newarrival.dart';
+import 'package:cakelake/homepage/our_offer.dart';
+import 'package:cakelake/homepage/searchbar.dart';
+import 'package:cakelake/homepage/top_categories.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -5,11 +12,20 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'hello',
-          style: TextStyle(color: Colors.black, fontSize: 22),
+    return const SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              CustomSearchBar(),
+              MyBanner(),
+              NewArrival(),
+              OurOffers(),
+              Bigyapan(),
+              TopCatergories(),
+              MyBottomNavigator(),
+            ],
+          ),
         ),
       ),
     );
