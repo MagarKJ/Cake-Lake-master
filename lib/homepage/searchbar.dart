@@ -1,6 +1,7 @@
 import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({super.key});
@@ -16,12 +17,13 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      //color: Colors.red,
       height: Get.height * 0.08,
       padding: EdgeInsets.only(
-          left: Get.width * 0.05,
-          top: Get.height * 0.015,
-          bottom: Get.height * 0.015,
-          right: Get.width * 0.05),
+        left: Get.width * 0.025,
+        top: Get.height * 0.015,
+        bottom: Get.height * 0.015,
+      ),
       child: Row(
         children: [
           Expanded(
@@ -34,6 +36,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               },
               decoration: InputDecoration(
                 hintText: 'Search...',
+                hintStyle: GoogleFonts.poppins(
+                    color: myGrey, fontSize: 12, fontWeight: FontWeight.w400),
                 border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),

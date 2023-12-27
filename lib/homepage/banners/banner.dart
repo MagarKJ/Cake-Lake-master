@@ -16,14 +16,15 @@ class _MyBannerState extends State<MyBanner> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Get.height * 0.28,
+      height: Get.height * 0.285,
+      width: double.infinity,
       child: Column(
         children: [
           Stack(
             children: [
               Image.asset(
                 'assets/image/banner/Bannar_Big.jpg',
-                height: Get.height * 0.215,
+                height: Get.height * 0.225,
                 fit: BoxFit.cover,
               ),
               Padding(
@@ -33,11 +34,11 @@ class _MyBannerState extends State<MyBanner> {
                 ),
                 child: SizedBox(
                   height: Get.height * 0.07,
-                  width: Get.width * 0.4,
+                  width: Get.width * 0.6,
                   child: Text(
                     'Indulge Your Senses: The Sweet Symphony of Gourmet Cakes Await You!',
                     style: GoogleFonts.poppins(
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),
@@ -52,11 +53,11 @@ class _MyBannerState extends State<MyBanner> {
                 ),
                 child: SizedBox(
                   height: Get.height * 0.04,
-                  width: Get.width * 0.53,
+                  width: Get.width * 0.7,
                   child: Text(
                     'Explore Exquisite Flavors and Irresistible Designs in Our Online Cake Boutique for Every Celebration',
                     style: GoogleFonts.poppins(
-                      fontSize: 8,
+                      fontSize: 11,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),

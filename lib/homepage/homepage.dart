@@ -2,7 +2,7 @@ import 'package:cakelake/bottomnav/bottomnav.dart';
 import 'package:cakelake/homepage/banners/banner.dart';
 import 'package:cakelake/homepage/bigyapan.dart';
 import 'package:cakelake/homepage/newarrival/newarrival.dart';
-import 'package:cakelake/homepage/our_offer.dart';
+import 'package:cakelake/homepage/ouroffers/our_offer.dart';
 import 'package:cakelake/homepage/searchbar.dart';
 import 'package:cakelake/homepage/top_categories.dart';
 import 'package:flutter/material.dart';

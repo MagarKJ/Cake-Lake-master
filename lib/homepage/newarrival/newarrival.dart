@@ -9,10 +9,10 @@ class NewArrival extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //color: Colors.red,
-      height: Get.height * 0.32,
-      width: Get.width * 0.89,
+    return SizedBox(
+      //  color: Colors.red,
+      height: Get.height * 0.38,
+      width: Get.width * 0.96,
       child: Column(
         children: [
           Row(
@@ -28,12 +28,12 @@ class NewArrival extends StatelessWidget {
                     Text(
                       'New',
                       style: GoogleFonts.jost(
-                          fontSize: 15.08, fontWeight: FontWeight.w600),
+                          fontSize: 17, fontWeight: FontWeight.w600),
                     ),
                     Text(
                       'Arrivals',
                       style: GoogleFonts.jost(
-                          fontSize: 15.08, fontWeight: FontWeight.w400),
+                          fontSize: 17, fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
@@ -62,6 +62,36 @@ class NewArrival extends StatelessWidget {
           ),
           HotSales(),
         ],
+      ),
+    );
+  }
+}
+
+class SeeAll extends StatelessWidget {
+  const SeeAll({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.center,
+      child: TextButton(
+        onPressed: () {},
+        child: Row(
+          children: [
+            Text(
+              'SEE ALL',
+              style: GoogleFonts.mulish(
+                  color: myMainYellow,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w800),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: myMainYellow,
+              size: 16,
+            ),
+          ],
+        ),
       ),
     );
   }
