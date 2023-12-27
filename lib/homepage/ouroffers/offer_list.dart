@@ -43,6 +43,13 @@ class OurOffferList extends StatelessWidget {
       price: 1200,
       rating: 5,
     ),
+    Product(
+      name: 'Red Velvet & Cream Cheese',
+      image: 'assets/image/new_arrival/Product2.jpg',
+      amount: 300,
+      price: 1200,
+      rating: 3,
+    ),
   ];
 
   OurOffferList({super.key});
@@ -50,10 +57,11 @@ class OurOffferList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //color: Colors.black,
-      height: Get.height * 0.4,
-      width: Get.width * 0.94,
+      //color: Colors.red,
+      height: Get.height * 0.42,
       child: ListView.builder(
+          shrinkWrap: true,
+          physics: const ClampingScrollPhysics(),
           itemCount: products.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -61,7 +69,10 @@ class OurOffferList extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   boxShadow: [
-                    BoxShadow(color: Colors.grey.shade300, offset: Offset(2, 2))
+                    BoxShadow(
+                      color: Colors.grey.shade300,
+                      offset: const Offset(2, 2),
+                    )
                   ],
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
@@ -83,89 +94,93 @@ class ImageItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                SizedBox(
-                  width: Get.width * 0.3,
-                  child: Image.asset(
-                    product.image,
-                    fit: BoxFit.cover,
+    return Expanded(
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  SizedBox(
+                    width: Get.width * 0.3,
+                    child: Image.asset(
+                      product.image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  //color: Colors.red,
-                  height: Get.height * 0.049,
-                  width: Get.width * 0.5,
-                  child: Text(
-                    '${product.name} ( ${product.amount} )',
-                    style: GoogleFonts.poppins(
-                        fontSize: 13, fontWeight: FontWeight.w600),
-                  ),
-                ),
-                Container(
-                  //color: Colors.blue,
-                  height: Get.height * 0.03,
-                  width: Get.width * 0.2,
-                  child: Text(
-                    'Rs.${product.price}',
-                    style: GoogleFonts.poppins(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: myRed),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                ],
+              ),
+              Container(
+                //  color: Colors.blue,
+                height: Get.height * 0.12,
+                width: Get.width * 0.5,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      //  color: Colors.red,
-                      height: Get.height * 0.02,
-                      width: Get.width * 0.27,
-                      child: RatingBar.builder(
-                        initialRating: product.rating,
-                        maxRating: 5,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemSize: Get.height * 0.02,
-                        itemPadding:
-                            const EdgeInsets.symmetric(horizontal: 1.0),
-                        itemBuilder: (context, _) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        '${product.name} ( ${product.amount} )',
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
                         ),
-                        onRatingUpdate: (rating) {
-                          // Handle the rating update if needed
-                        },
+                        maxLines: 3,
                       ),
                     ),
-                    SizedBox(
-                      // color: Colors.blue,
-                      height: Get.height * 0.02,
+                    Expanded(
+                      flex: 1,
                       child: Text(
-                        '${product.rating} Rating',
+                        'Rs.${product.price}',
                         style: GoogleFonts.poppins(
-                            fontSize: 11, fontWeight: FontWeight.w400),
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: myRed),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          RatingBar.builder(
+                            initialRating: product.rating,
+                            maxRating: 5,
+                            minRating: 1,
+                            direction: Axis.horizontal,
+                            allowHalfRating: true,
+                            itemCount: 5,
+                            itemSize: Get.height * 0.02,
+                            itemPadding:
+                                const EdgeInsets.symmetric(horizontal: 1.0),
+                            itemBuilder: (context, _) => const Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            onRatingUpdate: (rating) {
+                              // Handle the rating update if needed
+                            },
+                          ),
+                          SizedBox(
+                            // color: Colors.blue,
+                            height: Get.height * 0.02,
+                            child: Text(
+                              '${product.rating} Rating',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 11, fontWeight: FontWeight.w400),
+                            ),
+                          )
+                        ],
                       ),
                     )
                   ],
-                )
-              ],
-            ),
-          ],
-        ),
-      ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

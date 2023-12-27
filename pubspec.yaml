@@ -71,6 +71,8 @@ flutter:
     - assets/image/
     - assets/image/banner/
     - assets/image/new_arrival/
+    - assets/image/adds/
+    - assets/image/top_categories/
 
 
   # The following line ensures that the Material Icons font is

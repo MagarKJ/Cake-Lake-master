@@ -1,6 +1,6 @@
 import 'package:cakelake/authorization/forgot_password.dart';
 import 'package:cakelake/authorization/sign_up.dart';
-import 'package:cakelake/homepage/homepage.dart';
+import 'package:cakelake/bottomnav/bottomnav.dart';
 import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/custom_text.dart';
@@ -90,7 +90,7 @@ class _LogInState extends State<LogIn> {
                 CustomButton(
                   buttonText: 'Log In',
                   onPressed: () {
-                    Get.to(() => const MyHomePage());
+                    Get.to(() => const MyBottomNavigationBar());
                   },
                   width: Get.width * 0.2,
                   height: Get.height * 0.015,

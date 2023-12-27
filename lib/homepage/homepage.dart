@@ -1,10 +1,9 @@
-import 'package:cakelake/bottomnav/bottomnav.dart';
 import 'package:cakelake/homepage/banners/banner.dart';
 import 'package:cakelake/homepage/bigyapan.dart';
 import 'package:cakelake/homepage/newarrival/newarrival.dart';
 import 'package:cakelake/homepage/ouroffers/our_offer.dart';
 import 'package:cakelake/homepage/searchbar.dart';
-import 'package:cakelake/homepage/top_categories.dart';
+import 'package:cakelake/homepage/top_categories/top_categories.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -23,7 +22,6 @@ class MyHomePage extends StatelessWidget {
               OurOffers(),
               Bigyapan(),
               TopCatergories(),
-              MyBottomNavigator(),
             ],
           ),
         ),

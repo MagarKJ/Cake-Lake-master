@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MyBanner3 extends StatefulWidget {
-  const MyBanner3({super.key});
+class MyBanner5 extends StatefulWidget {
+  const MyBanner5({super.key});
 
   @override
-  State<MyBanner3> createState() => _MyBanner3State();
+  State<MyBanner5> createState() => _MyBanner5State();
 }
 
-class _MyBanner3State extends State<MyBanner3> {
+class _MyBanner5State extends State<MyBanner5> {
   int currentPage = 0;
 
   @override

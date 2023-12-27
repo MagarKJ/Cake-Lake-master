@@ -1,7 +1,11 @@
+import 'package:cakelake/homepage/banners/banner1.dart';
+import 'package:cakelake/homepage/banners/banner2.dart';
+import 'package:cakelake/homepage/banners/banner3.dart';
+import 'package:cakelake/homepage/banners/banner4.dart';
+import 'package:cakelake/homepage/banners/banner5.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MyBanner extends StatefulWidget {
   const MyBanner({super.key});
@@ -11,68 +15,45 @@ class MyBanner extends StatefulWidget {
 }
 
 class _MyBannerState extends State<MyBanner> {
+  final _pageController = PageController(viewportFraction: 1, keepPage: true);
   int currentPage = 0;
+  dynamic screens = [
+    const MyBanner1(),
+    const MyBanner2(),
+    const MyBanner3(),
+    const MyBanner4(),
+    const MyBanner5(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      // color: Colors.blue,
       height: Get.height * 0.285,
       width: double.infinity,
       child: Column(
         children: [
-          Stack(
-            children: [
-              Image.asset(
-                'assets/image/banner/Bannar_Big.jpg',
-                height: Get.height * 0.225,
-                fit: BoxFit.cover,
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: Get.height * 0.05,
-                  left: Get.width * 0.06,
-                ),
-                child: SizedBox(
-                  height: Get.height * 0.07,
-                  width: Get.width * 0.6,
-                  child: Text(
-                    'Indulge Your Senses: The Sweet Symphony of Gourmet Cakes Await You!',
-                    style: GoogleFonts.poppins(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.start,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: Get.height * 0.13,
-                  left: Get.width * 0.06,
-                ),
-                child: SizedBox(
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.7,
-                  child: Text(
-                    'Explore Exquisite Flavors and Irresistible Designs in Our Online Cake Boutique for Every Celebration',
-                    style: GoogleFonts.poppins(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.start,
-                  ),
-                ),
-              ),
-            ],
+          SizedBox(
+            //color: Colors.red,
+            height: Get.height * 0.225,
+            child: PageView.builder(
+                controller: _pageController,
+                itemCount: screens.length,
+                onPageChanged: (index) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                },
+                itemBuilder: (context, index) {
+                  return screens[index];
+                }),
           ),
           SizedBox(
             height: Get.height * 0.02,
           ),
           DotsIndicator(
-            position: 2,
-            dotsCount: 5,
+            position: currentPage.toInt(),
+            dotsCount: screens.length,
             decorator: DotsDecorator(
               size: const Size.square(10.0),
               activeSize: const Size(20.0, 10.0),
