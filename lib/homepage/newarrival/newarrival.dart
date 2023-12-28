@@ -1,3 +1,4 @@
+import 'package:cakelake/homepage/newarrival/expanded_newarrival.dart';
 import 'package:cakelake/homepage/newarrival/newarriaval_list.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,16 @@ class NewArrival extends StatelessWidget {
                   ],
                 ),
               ),
-              const SeeAll(),
+              GestureDetector(
+                onTap: () {
+                  Get.to(
+                    () => ExpandedNewArrival(
+                      products: NewArrivalList().products,
+                    ),
+                  );
+                },
+                child: const SeeAll(),
+              ),
             ],
           ),
           NewArrivalList(),
@@ -53,22 +63,19 @@ class SeeAll extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      child: Row(
-        children: [
-          Text(
-            'SEE ALL',
-            style: GoogleFonts.mulish(
-                color: myMainYellow, fontSize: 12, fontWeight: FontWeight.w800),
-          ),
-          Icon(
-            Icons.arrow_forward_ios,
-            color: myMainYellow,
-            size: 16,
-          ),
-        ],
-      ),
+    return Row(
+      children: [
+        Text(
+          'SEE ALL',
+          style: GoogleFonts.mulish(
+              color: myMainYellow, fontSize: 12, fontWeight: FontWeight.w800),
+        ),
+        Icon(
+          Icons.arrow_forward_ios,
+          color: myMainYellow,
+          size: 16,
+        ),
+      ],
     );
   }
 }

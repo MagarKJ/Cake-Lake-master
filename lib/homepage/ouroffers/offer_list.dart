@@ -1,6 +1,6 @@
 import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -139,41 +139,10 @@ class ImageItem extends StatelessWidget {
                             color: myRed),
                       ),
                     ),
-                    Expanded(
+                    const Expanded(
                       flex: 1,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          RatingBar.builder(
-                            initialRating: product.rating,
-                            maxRating: 5,
-                            minRating: 1,
-                            direction: Axis.horizontal,
-                            allowHalfRating: true,
-                            itemCount: 5,
-                            itemSize: Get.height * 0.02,
-                            itemPadding:
-                                const EdgeInsets.symmetric(horizontal: 1.0),
-                            itemBuilder: (context, _) => const Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                            ),
-                            onRatingUpdate: (rating) {
-                              // Handle the rating update if needed
-                            },
-                          ),
-                          SizedBox(
-                            // color: Colors.blue,
-                            height: Get.height * 0.02,
-                            child: Text(
-                              '${product.rating} Rating',
-                              style: GoogleFonts.poppins(
-                                  fontSize: 11, fontWeight: FontWeight.w400),
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                      child: StarRating(),
+                    ),
                   ],
                 ),
               ),
