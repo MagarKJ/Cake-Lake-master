@@ -131,6 +131,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   onPressed: () {},
                   height: Get.height * 0.015,
                   width: Get.width * 0.2,
+                  fontSize: 13,
                 ),
                 SizedBox(
                   height: Get.height * 0.05,

@@ -12,7 +12,6 @@ class CustomSearchBar extends StatefulWidget {
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final TextEditingController _searchController = TextEditingController();
-  String _searchTerm = '';
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,6 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               controller: _searchController,
               onChanged: (value) {
                 setState(() {
-                  _searchTerm = value;
                 });
               },
               decoration: InputDecoration(

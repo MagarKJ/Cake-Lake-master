@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Product {
+class ProductTop {
   final String name;
   final String image;
 
-  Product({
+  ProductTop({
     required this.name,
     required this.image,
   });
 }
 
 class TopCategoriesList extends StatelessWidget {
-  final List<Product> products = [
-    Product(
+  final List<ProductTop> producttop = [
+    ProductTop(
       name: 'Blood Orange',
       image: 'assets/image/top_categories/topc1.jpg',
     ),
-    Product(
+    ProductTop(
       name: 'White Cake',
       image: 'assets/image/top_categories/topc2.jpg',
     ),
-    Product(
+    ProductTop(
       name: 'Chocolate cake',
       image: 'assets/image/top_categories/topc3.jpg',
     ),
@@ -38,12 +38,12 @@ class TopCategoriesList extends StatelessWidget {
       width: Get.width * 0.94,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: products.length,
+          itemCount: producttop.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: Get.width * 0.01),
               child: ImageItem(
-                product: products[index],
+                product: producttop[index],
               ),
             );
           }),
@@ -52,7 +52,7 @@ class TopCategoriesList extends StatelessWidget {
 }
 
 class ImageItem extends StatelessWidget {
-  final Product product;
+  final ProductTop product;
 
   const ImageItem({super.key, required this.product});
 

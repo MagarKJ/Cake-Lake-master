@@ -1,3 +1,4 @@
+import 'package:cakelake/homepage/products/products.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/hotsale_logo.dart';
 import 'package:cakelake/widgets/star_rating.dart';
@@ -27,7 +28,7 @@ class NewArrivalList extends StatelessWidget {
       name: 'Red Velvet & Cream Cheese',
       image: 'assets/image/new_arrival/Product1.jpg',
       amount: 500,
-      price: 1200,
+      price: 1500,
       rating: 4.5,
     ),
     Product(
@@ -71,8 +72,8 @@ class NewArrivalList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.black,
+    return SizedBox(
+      //color: Colors.black,
       height: Get.height * 0.32,
       width: Get.width * 0.94,
       child: ListView.builder(
@@ -90,78 +91,93 @@ class NewArrivalList extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
+  double initialrating = 0;
 
-  const ImageItem({super.key, required this.product});
+  ImageItem({super.key, required this.product});
 
   @override
   State<ImageItem> createState() => _ImageItemState();
 }
 
 class _ImageItemState extends State<ImageItem> {
-  double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //color: Colors.blue,
-      height: Get.height * 0.32,
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              SizedBox(
-                width: Get.width * 0.43,
-                child: Image.asset(
-                  widget.product.image,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: Get.width * 0.275,
-                ),
-                child: const Sales(),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: Get.height * 0.015,
-          ),
-          Container(
-            height: Get.height * 0.05,
-            width: Get.width * 0.42,
-            // color: Colors.blue,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return GestureDetector(
+      onTap: () {
+        Get.to(
+          () => ProductDetails(product: widget.product),
+        );
+      },
+      child: SizedBox(
+        //color: Colors.blue,
+        height: Get.height * 0.32,
+        child: Column(
+          children: [
+            Stack(
               children: [
-                Expanded(
-                  child: Container(
-                    //  color: Colors.red,
-                    height: Get.height * 0.04,
-                    width: Get.width * 0.28,
-                    child: Text(
-                      '${widget.product.name} ( ${widget.product.amount} )',
-                      style: GoogleFonts.poppins(
-                          fontSize: 11, fontWeight: FontWeight.w600),
-                    ),
+                SizedBox(
+                  width: Get.width * 0.43,
+                  child: Image.asset(
+                    widget.product.image,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                Container(
-                  //color: Colors.orange,
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.12,
-                  child: Text(
-                    'Rs.${widget.product.price}',
-                    style: GoogleFonts.poppins(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: myRed),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: Get.width * 0.275,
                   ),
-                )
+                  child: const Sales(),
+                ),
               ],
             ),
-          ),
-          const StarRating(),
-        ],
+            SizedBox(
+              height: Get.height * 0.015,
+            ),
+            SizedBox(
+              height: Get.height * 0.05,
+              width: Get.width * 0.42,
+              // color: Colors.blue,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      //  color: Colors.red,
+                      height: Get.height * 0.04,
+                      width: Get.width * 0.28,
+                      child: Text(
+                        '${widget.product.name} ( ${widget.product.amount} )',
+                        style: GoogleFonts.poppins(
+                            fontSize: 11, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    //color: Colors.orange,
+                    height: Get.height * 0.04,
+                    width: Get.width * 0.12,
+                    child: Text(
+                      'Rs.${widget.product.price}',
+                      style: GoogleFonts.poppins(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w600,
+                          color: myRed),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              //color: Colors.red,
+              height: Get.height * 0.02,
+              width: Get.width * 0.41,
+              child: StarRating(
+                initialRating: widget.initialrating,
+              ),
+            ),
+          
+          ],
+        ),
       ),
     );
   }

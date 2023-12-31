@@ -72,7 +72,7 @@ class ForgotPassword extends StatelessWidget {
             buttonText: 'Submit',
             onPressed: () {},
             width: Get.width * 0.2,
-            height: Get.height * 0.015,
+            height: Get.height * 0.015, fontSize: 13,
           ),
         ],
       ),

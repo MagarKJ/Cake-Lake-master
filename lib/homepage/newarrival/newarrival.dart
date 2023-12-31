@@ -1,26 +1,31 @@
 import 'package:cakelake/homepage/newarrival/expanded_newarrival.dart';
 import 'package:cakelake/homepage/newarrival/newarriaval_list.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/widgets/seeall.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NewArrival extends StatelessWidget {
+class NewArrival extends StatefulWidget {
   const NewArrival({super.key});
 
   @override
+  State<NewArrival> createState() => _NewArrivalState();
+}
+
+class _NewArrivalState extends State<NewArrival> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      // color: Colors.red,
-      height: Get.height * 0.41,
+    return SizedBox(
+      //color: Colors.red,
+      height: Get.height * 0.38,
       width: Get.width * 0.96,
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                //  color: Colors.white,
+              SizedBox(
+                //  color: Colors.red,
                 height: Get.height * 0.04,
                 width: Get.width * 0.3,
                 child: Row(
@@ -51,31 +56,12 @@ class NewArrival extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(
+            height: Get.height * 0.02,
+          ),
           NewArrivalList(),
         ],
       ),
-    );
-  }
-}
-
-class SeeAll extends StatelessWidget {
-  const SeeAll({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'SEE ALL',
-          style: GoogleFonts.mulish(
-              color: myMainYellow, fontSize: 12, fontWeight: FontWeight.w800),
-        ),
-        Icon(
-          Icons.arrow_forward_ios,
-          color: myMainYellow,
-          size: 16,
-        ),
-      ],
     );
   }
 }

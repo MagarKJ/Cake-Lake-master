@@ -1,5 +1,5 @@
-import 'package:cakelake/homepage/newarrival/newarrival.dart';
 import 'package:cakelake/homepage/ouroffers/offer_list.dart';
+import 'package:cakelake/widgets/seeall.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,7 +9,7 @@ class OurOffers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.red,
       height: Get.height * 0.53,
       width: Get.width * 0.96,

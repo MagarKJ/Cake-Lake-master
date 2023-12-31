@@ -93,7 +93,7 @@ class _LogInState extends State<LogIn> {
                     Get.to(() => const MyBottomNavigationBar());
                   },
                   width: Get.width * 0.2,
-                  height: Get.height * 0.015,
+                  height: Get.height * 0.015, fontSize: 13,
                 ),
                 SizedBox(
                   height: Get.height * 0.05,

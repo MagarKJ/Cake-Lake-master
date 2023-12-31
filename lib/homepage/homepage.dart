@@ -11,18 +11,24 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              CustomSearchBar(),
-              MyBanner(),
-              NewArrival(),
-              OurOffers(),
-              Bigyapan(),
-              TopCatergories(),
-            ],
+    return SafeArea(
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context)
+              .unfocus(); // keyboard desapears when we tap on screen
+        },
+        child: const Scaffold(
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                CustomSearchBar(),
+                MyBanner(),
+                NewArrival(),
+                OurOffers(),
+                Bigyapan(),
+                TopCatergories(),
+              ],
+            ),
           ),
         ),
       ),

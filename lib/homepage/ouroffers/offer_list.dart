@@ -56,7 +56,7 @@ class OurOffferList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //color: Colors.red,
       height: Get.height * 0.42,
       child: ListView.builder(
@@ -87,69 +87,76 @@ class OurOffferList extends StatelessWidget {
   }
 }
 
-class ImageItem extends StatelessWidget {
+class ImageItem extends StatefulWidget {
   final Product product;
+  double rating = 0;
 
-  const ImageItem({super.key, required this.product});
+  ImageItem({
+    super.key,
+    required this.product,
+  });
 
   @override
+  State<ImageItem> createState() => _ImageItemState();
+}
+
+class _ImageItemState extends State<ImageItem> {
+  @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Stack(
+    return Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Stack(
+              children: [
+                SizedBox(
+                  width: Get.width * 0.3,
+                  child: Image.asset(
+                    widget.product.image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              //  color: Colors.blue,
+              height: Get.height * 0.12,
+              width: Get.width * 0.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    width: Get.width * 0.3,
-                    child: Image.asset(
-                      product.image,
-                      fit: BoxFit.cover,
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      '${widget.product.name} ( ${widget.product.amount} )',
+                      style: GoogleFonts.poppins(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      maxLines: 3,
                     ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Text(
+                      'Rs.${widget.product.price}',
+                      style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: myRed),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: StarRating(initialRating: widget.rating),
                   ),
                 ],
               ),
-              Container(
-                //  color: Colors.blue,
-                height: Get.height * 0.12,
-                width: Get.width * 0.5,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Text(
-                        '${product.name} ( ${product.amount} )',
-                        style: GoogleFonts.poppins(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        maxLines: 3,
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        'Rs.${product.price}',
-                        style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                            color: myRed),
-                      ),
-                    ),
-                    const Expanded(
-                      flex: 1,
-                      child: StarRating(),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

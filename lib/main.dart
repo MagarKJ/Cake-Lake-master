@@ -1,5 +1,4 @@
 import 'package:cakelake/bottomnav/bottomnav.dart';
-import 'package:cakelake/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       home: const Scaffold(
-        body: MyBottomNavigationBar(),
+        resizeToAvoidBottomInset: false,  // bottomnav does not show when keyboard pops
+        body: MyBottomNavigationBar(),  
       ),
     );
   }
