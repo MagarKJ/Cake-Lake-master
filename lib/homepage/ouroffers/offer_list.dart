@@ -1,56 +1,13 @@
+import 'package:cakelake/homepage/products/products.dart';
+import 'package:cakelake/homepage/products/products_list.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Product {
-  final String name;
-  final String image;
-  final int amount;
-  final double price;
-  final double rating;
-
-  Product({
-    required this.name,
-    required this.image,
-    required this.amount,
-    required this.price,
-    required this.rating,
-  });
-}
-
 class OurOffferList extends StatelessWidget {
-  final List<Product> products = [
-    Product(
-      name: 'Red Velvet & Cream Cheese',
-      image: 'assets/image/new_arrival/Product1.jpg',
-      amount: 500,
-      price: 1200,
-      rating: 4.5,
-    ),
-    Product(
-      name: 'Red Velvet & Cream Cheese',
-      image: 'assets/image/new_arrival/Product2.jpg',
-      amount: 300,
-      price: 1200,
-      rating: 3,
-    ),
-    Product(
-      name: 'Red Velvet & Cream Cheese',
-      image: 'assets/image/new_arrival/Product3.jpg',
-      amount: 400,
-      price: 1200,
-      rating: 5,
-    ),
-    Product(
-      name: 'Red Velvet & Cream Cheese',
-      image: 'assets/image/new_arrival/Product2.jpg',
-      amount: 300,
-      price: 1200,
-      rating: 3,
-    ),
-  ];
+  final List<Product> productlist = MyProductLIst.getProducts();
 
   OurOffferList({super.key});
 
@@ -62,7 +19,7 @@ class OurOffferList extends StatelessWidget {
       child: ListView.builder(
           shrinkWrap: true,
           physics: const ClampingScrollPhysics(),
-          itemCount: products.length,
+          itemCount: productlist.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.only(bottom: Get.height * 0.01),
@@ -78,7 +35,7 @@ class OurOffferList extends StatelessWidget {
                   color: Colors.white,
                 ),
                 child: ImageItem(
-                  product: products[index],
+                  product: productlist[index],
                 ),
               ),
             );
@@ -103,60 +60,67 @@ class ImageItem extends StatefulWidget {
 class _ImageItemState extends State<ImageItem> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                SizedBox(
-                  width: Get.width * 0.3,
-                  child: Image.asset(
-                    widget.product.image,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              //  color: Colors.blue,
-              height: Get.height * 0.12,
-              width: Get.width * 0.5,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: () {
+        Get.to(
+          () => ProductDetails(product: widget.product),
+        );
+      },
+      child: Column(
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
                 children: [
-                  Expanded(
-                    flex: 2,
-                    child: Text(
-                      '${widget.product.name} ( ${widget.product.amount} )',
-                      style: GoogleFonts.poppins(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      maxLines: 3,
+                  SizedBox(
+                    width: Get.width * 0.3,
+                    child: Image.asset(
+                      widget.product.image,
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Text(
-                      'Rs.${widget.product.price}',
-                      style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w600,
-                          color: myRed),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: StarRating(initialRating: widget.rating),
                   ),
                 ],
               ),
-            ),
-          ],
-        ),
-      ],
+              SizedBox(
+                //  color: Colors.blue,
+                height: Get.height * 0.12,
+                width: Get.width * 0.5,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        '${widget.product.name} ( ${widget.product.amount} )',
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        maxLines: 3,
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Text(
+                        'Rs.${widget.product.price}',
+                        style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: myRed),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: StarRating(initialRating: widget.rating),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

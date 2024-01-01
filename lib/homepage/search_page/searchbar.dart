@@ -1,3 +1,4 @@
+import 'package:cakelake/homepage/search_page/expanded_searchbar.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,8 +30,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             child: TextField(
               controller: _searchController,
               onChanged: (value) {
-                setState(() {
-                });
+                setState(() {});
               },
               decoration: InputDecoration(
                 hintText: 'Search...',
@@ -48,9 +48,14 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                         topRight: Radius.circular(20)),
                     color: myBrownColor,
                   ),
-                  child: const Icon(
-                    Icons.search,
-                    color: Colors.white,
+                  child: IconButton(
+                    onPressed: () {
+                      Get.to(() => const ExpandedSearchBar());
+                    },
+                    icon: const Icon(
+                      Icons.search,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

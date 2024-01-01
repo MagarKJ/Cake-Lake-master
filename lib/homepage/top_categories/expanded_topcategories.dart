@@ -1,0 +1,148 @@
+import 'package:cakelake/homepage/products/products_list.dart';
+import 'package:cakelake/homepage/top_categories/categories_list.dart';
+import 'package:cakelake/homepage/top_categories/top_categories_list.dart';
+import 'package:cakelake/widgets/appbar.dart';
+import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/widgets/star_rating.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class ExpanedTopCategories extends StatelessWidget {
+  List<Product> productlist = MyProductLIst.getProducts();
+  List<ProductTop> categorylist = CategoryList.wantProduct();
+  ExpanedTopCategories({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const AppHeader(
+        title1: 'Top ',
+        title2: 'Categories',
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              GridView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 5,
+                  mainAxisExtent: Get.height * 0.32,
+                ),
+                itemCount: 4,
+                itemBuilder: (context, index) {
+                  return ImageItem(
+                    product: productlist[index],
+                  );
+                },
+              ),
+              RichText(
+                text: TextSpan(
+                  text: 'Other ',
+                  style: GoogleFonts.jost(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Categories',
+                      style: GoogleFonts.jost(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500,
+                          color: myGrey),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Get.height * 0.03,
+              ),
+              TopCategoriesList(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ImageItem extends StatefulWidget {
+  final Product product;
+  double initialrating = 0;
+
+  ImageItem({
+    super.key,
+    required this.product,
+  });
+
+  @override
+  State<ImageItem> createState() => _ImageItemState();
+}
+
+class _ImageItemState extends State<ImageItem> {
+  double initalRating = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          // color: Colors.red,
+          width: Get.width * 0.44,
+          child: Image.asset(
+            widget.product.image,
+            fit: BoxFit.fill,
+          ),
+        ),
+        SizedBox(
+          height: Get.height * 0.015,
+        ),
+        SizedBox(
+          height: Get.height * 0.05,
+          width: Get.width * 0.41,
+          // color: Colors.blue,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: SizedBox(
+                  //  color: Colors.red,
+                  height: Get.height * 0.04,
+                  width: Get.width * 0.28,
+                  child: Text(
+                    '${widget.product.name} ( ${widget.product.amount} )',
+                    style: GoogleFonts.poppins(
+                        fontSize: 11, fontWeight: FontWeight.w600),
+                    overflow: TextOverflow.clip,
+                  ),
+                ),
+              ),
+              SizedBox(
+                //color: Colors.orange,
+                height: Get.height * 0.04,
+                width: Get.width * 0.12,
+                child: Text(
+                  'Rs.${widget.product.price}',
+                  style: GoogleFonts.poppins(
+                      fontSize: 10, fontWeight: FontWeight.w600, color: myRed),
+                ),
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: Get.width * 0.03),
+          child: StarRating(
+            initialRating: widget.initialrating,
+          ),
+        ),
+      ],
+    );
+  }
+}
