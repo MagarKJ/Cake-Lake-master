@@ -32,6 +32,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               onChanged: (value) {
                 setState(() {});
               },
+              
               decoration: InputDecoration(
                 hintText: 'Search...',
                 hintStyle: GoogleFonts.poppins(
@@ -47,6 +48,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                         bottomRight: Radius.circular(20),
                         topRight: Radius.circular(20)),
                     color: myBrownColor,
+                    
                   ),
                   child: IconButton(
                     onPressed: () {

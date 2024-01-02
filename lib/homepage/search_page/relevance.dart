@@ -12,7 +12,7 @@ class Relevance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.85,
+      height: Get.height * 0.8,
       width: Get.width * 0.94,
       color: Colors.white,
       child: GridView.builder(
@@ -50,66 +50,57 @@ class _ImageItemState extends State<ImageItem> {
   double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //color: Colors.blue,
-      height: Get.height * 0.2,
-      child: Column(
-        children: [
-          Container(
-            // color: Colors.red,
-            width: Get.width * 0.44,
-            child: Image.asset(
-              widget.product.image,
-              fit: BoxFit.fill,
-            ),
+    return Column(
+      children: [
+        Container(
+          // color: Colors.red,
+          width: Get.width * 0.44,
+          child: Image.asset(
+            widget.product.image,
+            fit: BoxFit.fill,
           ),
-          SizedBox(
-            height: Get.height * 0.015,
-          ),
-          Container(
-            height: Get.height * 0.05,
-            width: Get.width * 0.41,
-            // color: Colors.blue,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  // color: Colors.red,
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.28,
-                  child: Text(
-                    '${widget.product.name} ( ${widget.product.amount} )',
-                    style: GoogleFonts.poppins(
-                        fontSize: 11, fontWeight: FontWeight.w600),
-                    overflow: TextOverflow.clip,
-                  ),
+        ),
+        SizedBox(
+          height: Get.height * 0.015,
+        ),
+        Container(
+          height: Get.height * 0.05,
+          width: Get.width * 0.41,
+          // color: Colors.blue,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                // color: Colors.red,
+                height: Get.height * 0.04,
+                width: Get.width * 0.28,
+                child: Text(
+                  '${widget.product.name} ( ${widget.product.amount} )',
+                  style: GoogleFonts.poppins(
+                      fontSize: 11, fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.clip,
                 ),
-                Container(
-                  //  color: Colors.orange,
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.12,
-                  child: Text(
-                    'Rs.${widget.product.price}',
-                    style: GoogleFonts.poppins(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: myRed),
-                  ),
-                )
-              ],
-            ),
-          ),
-          Container(
-            // color: Colors.amber,
-            child: Padding(
-              padding: EdgeInsets.only(left: Get.width * 0.02),
-              child: StarRating(
-                initialRating: widget.initialrating,
               ),
-            ),
+              Container(
+                //  color: Colors.orange,
+                height: Get.height * 0.04,
+                width: Get.width * 0.12,
+                child: Text(
+                  'Rs.${widget.product.price}',
+                  style: GoogleFonts.poppins(
+                      fontSize: 10, fontWeight: FontWeight.w600, color: myRed),
+                ),
+              )
+            ],
           ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: Get.width * 0.02),
+          child: StarRating(
+            initialRating: widget.initialrating,
+          ),
+        ),
+      ],
     );
   }
 }

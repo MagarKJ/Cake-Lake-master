@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StarRating extends StatefulWidget {
-  StarRating({super.key, required this.initialRating});
+   StarRating({super.key, required this.initialRating});
 
-  double initialRating;
+ double initialRating;
   @override
   State<StarRating> createState() => _StarRatingState();
 }

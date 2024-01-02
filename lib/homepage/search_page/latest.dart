@@ -12,7 +12,7 @@ class Latest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Get.height * 0.85,
+      height: Get.height * 0.8,
       width: Get.width * 0.94,
       color: Colors.red,
       child: GridView.builder(

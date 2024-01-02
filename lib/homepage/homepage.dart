@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
           body: SingleChildScrollView(
             child: Column(
               children: [
-                Mylogo(),
+                //Mylogo(),
                 CustomSearchBar(),
                 MyBanner(),
                 NewArrival(),

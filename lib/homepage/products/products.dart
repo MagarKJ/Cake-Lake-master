@@ -329,6 +329,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                           width: Get.width * 0.02,
                         ),
                         Container(
+                          // height: Get.height * 0.05,
+                          // width: Get.width * 0.11,
+                          
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.red),

@@ -21,7 +21,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
-              size: 24,
+              size: 23,
             ),
           ),
           RichText(
@@ -47,5 +47,5 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(56.0);
+  Size get preferredSize => const Size.fromHeight(60.0);
 }
