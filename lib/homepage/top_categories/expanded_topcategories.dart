@@ -8,12 +8,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ExpanedTopCategories extends StatelessWidget {
-  List<Product> productlist = MyProductLIst.getProducts();
-  List<ProductTop> categorylist = CategoryList.wantProduct();
-  ExpanedTopCategories({
+class ExpanedTopCategories extends StatefulWidget {
+  const ExpanedTopCategories({
     super.key,
   });
+
+  @override
+  State<ExpanedTopCategories> createState() => _ExpanedTopCategoriesState();
+}
+
+class _ExpanedTopCategoriesState extends State<ExpanedTopCategories> {
+  List<Product> productlist = MyProductLIst.getProducts();
+
+  List<ProductTop> categorylist = CategoryList.wantProduct();
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +28,7 @@ class ExpanedTopCategories extends StatelessWidget {
       appBar: const AppHeader(
         title1: 'Top ',
         title2: 'Categories',
+        icon: Icons.arrow_back_ios_new_outlined,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -43,23 +51,9 @@ class ExpanedTopCategories extends StatelessWidget {
                   );
                 },
               ),
-              RichText(
-                text: TextSpan(
-                  text: 'Other ',
-                  style: GoogleFonts.jost(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black),
-                  children: <TextSpan>[
-                    TextSpan(
-                      text: 'Categories',
-                      style: GoogleFonts.jost(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w500,
-                          color: myGrey),
-                    )
-                  ],
-                ),
+              const AppHeader(
+                title1: 'Other ',
+                title2: 'Categories',
               ),
               SizedBox(
                 height: Get.height * 0.03,
@@ -75,9 +69,9 @@ class ExpanedTopCategories extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  double initialrating = 0;
+  final double initialrating = 0;
 
-  ImageItem({
+  const ImageItem({
     super.key,
     required this.product,
   });

@@ -5,38 +5,43 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppHeader extends StatelessWidget implements PreferredSizeWidget {
   final String title1;
-  final String title2;
+  final String? title2;
+  final IconData? icon;
 
-  const AppHeader({super.key, required this.title1, required this.title2});
+  const AppHeader({super.key, required this.title1, this.title2, this.icon});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Row(
         children: [
-          IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.black,
-              size: 23,
+          if (icon != null)
+            IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: Icon(
+                icon,
+                color: myBrownColor,
+              ),
             ),
-          ),
           RichText(
             text: TextSpan(
               text: title1,
               style: GoogleFonts.jost(
                   fontSize: 22,
                   fontWeight: FontWeight.w700,
-                  color: Colors.black),
+                  color: myBrownColor),
               children: <TextSpan>[
-                TextSpan(
-                  text: title2,
-                  style: GoogleFonts.jost(
-                      fontSize: 22, fontWeight: FontWeight.w500, color: myGrey),
-                )
+                if (title2 != null)
+                  TextSpan(
+                    text: title2,
+                    style: GoogleFonts.jost(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w500,
+                      color: myGrey,
+                    ),
+                  ),
               ],
             ),
           ),

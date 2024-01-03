@@ -1,6 +1,5 @@
 import 'package:cakelake/homepage/banners/banner.dart';
 import 'package:cakelake/homepage/bigyapan.dart';
-import 'package:cakelake/homepage/logo.dart';
 import 'package:cakelake/homepage/newarrival/newarrival.dart';
 import 'package:cakelake/homepage/ouroffers/our_offer.dart';
 import 'package:cakelake/homepage/search_page/searchbar.dart';

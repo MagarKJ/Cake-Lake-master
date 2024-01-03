@@ -43,7 +43,7 @@ class _ImageItemState extends State<ImageItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => ExpanedTopCategories());
+        Get.to(() => const ExpanedTopCategories());
       },
       child: Row(
         children: [

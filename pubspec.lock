@@ -457,7 +457,7 @@ packages:
     source: hosted
     version: "2.1.7"
   provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: provider
       sha256: "9a96a0a19b594dbc5bf0f1f27d2bc67d5f95957359b461cd9feb44ed6ae75096"
@@ -533,6 +533,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  smooth_star_rating_null_safety:
+    dependency: "direct main"
+    description:
+      name: smooth_star_rating_null_safety
+      sha256: "8b3e56609da43577e5e72732d1dcad62fcabbd8131b228542f9ce2e9dc245dc1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4+2"
   source_span:
     dependency: transitive
     description:

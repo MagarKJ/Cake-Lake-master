@@ -35,9 +35,9 @@ class NewArrivalList extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  double initialrating = 0;
+  final double initialrating = 0;
 
-  ImageItem({super.key, required this.product});
+  const ImageItem({super.key, required this.product});
 
   @override
   State<ImageItem> createState() => _ImageItemState();
@@ -116,7 +116,8 @@ class _ImageItemState extends State<ImageItem> {
               height: Get.height * 0.02,
               width: Get.width * 0.41,
               child: StarRating(
-                initialRating: widget.initialrating,
+                initialRating: 0,
+                
               ),
             ),
           ],

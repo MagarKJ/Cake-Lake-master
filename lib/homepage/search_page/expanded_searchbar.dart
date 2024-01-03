@@ -42,8 +42,8 @@ class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
                       // color: Colors.red,
                       height: Get.height * 0.05,
                       child: const AppHeader(
-                        title1: 'Search ',
-                        title2: 'Item',
+                        title1: 'Search',
+                        icon: Icons.arrow_back_ios_new_outlined,
                       ),
                     ),
                     Container(

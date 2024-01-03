@@ -1,3 +1,5 @@
+
+
 import 'package:cakelake/homepage/products/products_list.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
@@ -35,9 +37,9 @@ class Popularity extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  double initialrating = 0;
+ final  double initialrating = 0;
 
-  ImageItem({
+  const ImageItem({
     super.key,
     required this.product,
   });

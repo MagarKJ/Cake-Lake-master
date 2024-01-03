@@ -1,4 +1,7 @@
 import 'package:cakelake/homepage/products/products_list.dart';
+
+import 'package:cakelake/view/addreview.dart';
+import 'package:cakelake/view/reviews.dart';
 import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/seeall.dart';
@@ -10,9 +13,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ProductDetails extends StatefulWidget {
   final Product product;
-  double initalRating = 0;
+  final double initalRating = 0;
 
-  ProductDetails({
+  const ProductDetails({
     super.key,
     required this.product,
   });
@@ -23,6 +26,28 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int counter = 1;
+  final _pageController = PageController(viewportFraction: 1, keepPage: true);
+  int currentPage = 0;
+  dynamic screens = [];
+
+  @override
+  void initState() {
+    super.initState();
+    screens = [
+      Image.asset(
+        '${widget.product.expandedImage}',
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        '${widget.product.expandedImage}',
+        fit: BoxFit.cover,
+      ),
+      Image.asset(
+        '${widget.product.expandedImage}',
+        fit: BoxFit.cover,
+      ),
+    ];
+  }
 
   void increment() {
     setState(() {
@@ -48,12 +73,20 @@ class _ProductDetailsState extends State<ProductDetails> {
               Stack(
                 alignment: Alignment.topCenter,
                 children: [
-                  Container(
+                  SizedBox(
                     //color: Colors.red,
-                    height: Get.height * 0.4,
-                    width: double.infinity,
-                    child: Image.asset('assets/image/products/mainproducts.jpg',
-                        fit: BoxFit.cover),
+                    height: Get.height * 0.45,
+                    child: PageView.builder(
+                        controller: _pageController,
+                        itemCount: screens.length,
+                        onPageChanged: (index) {
+                          setState(() {
+                            currentPage = index;
+                          });
+                        },
+                        itemBuilder: (context, index) {
+                          return screens[index];
+                        }),
                   ),
                   Container(
                     //color: Colors.red,
@@ -119,8 +152,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ],
               ),
               DotsIndicator(
-                position: 2,
-                dotsCount: 3,
+                position: currentPage.toInt(),
+                dotsCount: screens.length,
                 decorator: DotsDecorator(
                   size: const Size.square(10.0),
                   activeSize: const Size(20.0, 10.0),
@@ -159,7 +192,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 height: Get.height * 0.12,
                 width: Get.width * 0.9,
                 child: Text(
-                  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas maiores quibusdam excepturi commodi tempore ad, reprehenderit quidem dolor dolorem tempora quisquam eos sapiente neque possimus eius culpa nesciunt perspiciatis ipsam!',
+                  '${widget.product.description}',
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w400,
                     fontSize: 12,
@@ -186,7 +219,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                   children: [
                     CustomButton(
                       buttonText: 'Add Review',
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => const AddReview());
+                      },
                       width: Get.width * 0.06,
                       height: Get.height * 0.01,
                       icon: Icons.edit_square,
@@ -211,7 +246,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                       style: GoogleFonts.poppins(
                           fontWeight: FontWeight.w600, fontSize: 15),
                     ),
-                    const SeeAll(),
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(() => const Reviewpage());
+                      },
+                      child: const SeeAll(),
+                    ),
                   ],
                 ),
               ),
@@ -331,7 +371,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         Container(
                           // height: Get.height * 0.05,
                           // width: Get.width * 0.11,
-                          
+
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                               color: Colors.red),

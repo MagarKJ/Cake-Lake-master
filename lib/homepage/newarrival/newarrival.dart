@@ -1,9 +1,9 @@
 import 'package:cakelake/homepage/newarrival/expanded_newarrival.dart';
 import 'package:cakelake/homepage/newarrival/newarriaval_list.dart';
+import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/seeall.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NewArrival extends StatefulWidget {
   const NewArrival({super.key});
@@ -18,31 +18,15 @@ class _NewArrivalState extends State<NewArrival> {
     return SizedBox(
       //color: Colors.red,
       height: Get.height * 0.38,
-      width: Get.width * 0.96,
+      width: Get.width * 0.94,
       child: Column(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                //  color: Colors.red,
-                height: Get.height * 0.04,
-                width: Get.width * 0.3,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      'New',
-                      style: GoogleFonts.jost(
-                          fontSize: 18, fontWeight: FontWeight.w700),
-                    ),
-                    Text(
-                      'Arrivals',
-                      style: GoogleFonts.jost(
-                          fontSize: 18, fontWeight: FontWeight.w500),
-                    ),
-                  ],
-                ),
+              const AppHeader(
+                title1: 'New ',
+                title2: 'Arrival',
               ),
               GestureDetector(
                 onTap: () {

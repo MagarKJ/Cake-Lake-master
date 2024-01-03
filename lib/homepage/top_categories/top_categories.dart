@@ -1,7 +1,7 @@
 import 'package:cakelake/homepage/top_categories/top_categories_list.dart';
+import 'package:cakelake/widgets/appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TopCatergories extends StatelessWidget {
   const TopCatergories({super.key});
@@ -15,25 +15,9 @@ class TopCatergories extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
-            //color: Colors.red,
-            height: Get.height * 0.04,
-            width: Get.width * 0.31,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  'Top',
-                  style: GoogleFonts.jost(
-                      fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-                Text(
-                  'Categories',
-                  style: GoogleFonts.jost(
-                      fontSize: 18, fontWeight: FontWeight.w500),
-                ),
-              ],
-            ),
+          const AppHeader(
+            title1: 'Top ',
+            title2: 'Categories',
           ),
           SizedBox(
             height: Get.height * 0.02,

@@ -46,9 +46,9 @@ class OurOffferList extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  double rating = 0;
+  final double rating = 0;
 
-  ImageItem({
+  const ImageItem({
     super.key,
     required this.product,
   });

@@ -7,8 +7,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExpandedNewArrival extends StatefulWidget {
-  List<Product> productlist = MyProductLIst.getProducts();
-  ExpandedNewArrival({
+  const ExpandedNewArrival({
     super.key,
   });
 
@@ -17,12 +16,14 @@ class ExpandedNewArrival extends StatefulWidget {
 }
 
 class _ExpandedNewArrivalState extends State<ExpandedNewArrival> {
+  List<Product> productlist = MyProductLIst.getProducts();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppHeader(
         title1: 'New ',
         title2: 'Arrival',
+        icon: Icons.arrow_back_ios_new_outlined,
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -34,10 +35,10 @@ class _ExpandedNewArrivalState extends State<ExpandedNewArrival> {
             mainAxisSpacing: 5,
             mainAxisExtent: Get.height * 0.32,
           ),
-          itemCount: widget.productlist.length,
+          itemCount: productlist.length,
           itemBuilder: (context, index) {
             return ImageItem(
-              product: widget.productlist[index],
+              product: productlist[index],
             );
           },
         ),
@@ -48,9 +49,9 @@ class _ExpandedNewArrivalState extends State<ExpandedNewArrival> {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  double initialrating = 0;
+  final double initialrating = 0;
 
-  ImageItem({
+  const ImageItem({
     super.key,
     required this.product,
   });

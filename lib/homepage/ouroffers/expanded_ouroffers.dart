@@ -1,33 +1,48 @@
 import 'package:cakelake/homepage/products/products_list.dart';
+import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Latest extends StatelessWidget {
-  final List<Product> productlist = MyProductLIst.getProducts();
-  Latest({super.key});
+class ExpandedOurOffers extends StatefulWidget {
+  const ExpandedOurOffers({
+    super.key,
+  });
+
+  @override
+  State<ExpandedOurOffers> createState() => _ExpandedOurOffersState();
+}
+
+class _ExpandedOurOffersState extends State<ExpandedOurOffers> {
+  List<Product> productlist = MyProductLIst.getProducts();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.8,
-      width: Get.width * 0.94,
-      color: Colors.red,
-      child: GridView.builder(
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisExtent: Get.height * 0.32,
+    return Scaffold(
+      appBar: const AppHeader(
+        title1: 'Our ',
+        title2: 'Offers',
+        icon: Icons.arrow_back_ios_new_outlined,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: GridView.builder(
+          scrollDirection: Axis.vertical,
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 5,
+            mainAxisExtent: Get.height * 0.32,
+          ),
+          itemCount: productlist.length,
+          itemBuilder: (context, index) {
+            return ImageItem(
+              product: productlist[index],
+            );
+          },
         ),
-        itemCount: productlist.length,
-        itemBuilder: (context, index) {
-          return ImageItem(
-            product: productlist[index],
-          );
-        },
       ),
     );
   }
@@ -50,12 +65,12 @@ class _ImageItemState extends State<ImageItem> {
   double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.blue,
       height: Get.height * 0.2,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             // color: Colors.red,
             width: Get.width * 0.44,
             child: Image.asset(
@@ -66,26 +81,28 @@ class _ImageItemState extends State<ImageItem> {
           SizedBox(
             height: Get.height * 0.015,
           ),
-          Container(
+          SizedBox(
             height: Get.height * 0.05,
             width: Get.width * 0.41,
             // color: Colors.blue,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  // color: Colors.red,
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.28,
-                  child: Text(
-                    '${widget.product.name} ( ${widget.product.amount} )',
-                    style: GoogleFonts.poppins(
-                        fontSize: 11, fontWeight: FontWeight.w600),
-                    overflow: TextOverflow.clip,
+                Expanded(
+                  child: SizedBox(
+                    //  color: Colors.red,
+                    height: Get.height * 0.04,
+                    width: Get.width * 0.28,
+                    child: Text(
+                      '${widget.product.name} ( ${widget.product.amount} )',
+                      style: GoogleFonts.poppins(
+                          fontSize: 11, fontWeight: FontWeight.w600),
+                      overflow: TextOverflow.clip,
+                    ),
                   ),
                 ),
-                Container(
-                  //  color: Colors.orange,
+                SizedBox(
+                  //color: Colors.orange,
                   height: Get.height * 0.04,
                   width: Get.width * 0.12,
                   child: Text(
@@ -99,13 +116,10 @@ class _ImageItemState extends State<ImageItem> {
               ],
             ),
           ),
-          Container(
-            // color: Colors.amber,
-            child: Padding(
-              padding: EdgeInsets.only(left: Get.width * 0.02),
-              child: StarRating(
-                initialRating: widget.initialrating,
-              ),
+          Padding(
+            padding: EdgeInsets.only(left: Get.width * 0.03),
+            child: StarRating(
+              initialRating: widget.initialrating,
             ),
           ),
         ],
