@@ -7,12 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NewArrivalList extends StatelessWidget {
-  final List<Product> productlist = MyProductLIst.getProducts();
-
+class NewArrivalList extends StatefulWidget {
   NewArrivalList({
     super.key,
   });
+
+  @override
+  State<NewArrivalList> createState() => _NewArrivalListState();
+}
+
+class _NewArrivalListState extends State<NewArrivalList> {
+  final List<Product> productlist = MyProductLIst.getProducts();
+  // final shop = context.read<Shop>();
+
+  // final productMenu = shop.productMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -115,9 +123,14 @@ class _ImageItemState extends State<ImageItem> {
               //color: Colors.red,
               height: Get.height * 0.02,
               width: Get.width * 0.41,
-              child: StarRating(
-                initialRating: 0,
-                
+              child: Row(
+                children: [
+                  StarRating(
+                    initialRating: 2,
+                    size: 12,
+                  ),
+                  Text('${widget.initialrating}'),
+                ],
               ),
             ),
           ],

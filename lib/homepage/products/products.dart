@@ -1,7 +1,8 @@
+import 'package:cakelake/homepage/products/cart_controller.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
 
-import 'package:cakelake/view/addreview.dart';
-import 'package:cakelake/view/reviews.dart';
+import 'package:cakelake/view/reviews/addreview.dart';
+import 'package:cakelake/view/reviews/reviews.dart';
 import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/seeall.dart';
@@ -25,6 +26,7 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  final CartController _cartController = Get.find();
   int counter = 1;
   final _pageController = PageController(viewportFraction: 1, keepPage: true);
   int currentPage = 0;
@@ -110,41 +112,38 @@ class _ProductDetailsState extends State<ProductDetails> {
                             ),
                           ),
                         ),
-                        Container(
-                          //color: Colors.blue,
-                          child: Row(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Colors.white,
-                                ),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.favorite_outline,
-                                    color: myBrownColor,
-                                  ),
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white,
+                              ),
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.favorite_outline,
+                                  color: myBrownColor,
                                 ),
                               ),
-                              SizedBox(
-                                width: Get.width * 0.03,
+                            ),
+                            SizedBox(
+                              width: Get.width * 0.03,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: Colors.white,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Colors.white,
-                                ),
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.share_outlined,
-                                    color: myBrownColor,
-                                  ),
+                              child: IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.share_outlined,
+                                  color: myBrownColor,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -220,14 +219,18 @@ class _ProductDetailsState extends State<ProductDetails> {
                     CustomButton(
                       buttonText: 'Add Review',
                       onPressed: () {
-                        Get.to(() => const AddReview());
+                        Get.to(() => AddReview());
                       },
                       width: Get.width * 0.06,
                       height: Get.height * 0.01,
                       icon: Icons.edit_square,
                       fontSize: 12,
+                      backGroundColor: myBrownColor,
                     ),
-                    StarRating(initialRating: widget.initalRating)
+                    StarRating(
+                      initialRating: widget.initalRating,
+                      size: 12,
+                    )
                   ],
                 ),
               ),
@@ -306,6 +309,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                           flex: 2,
                           child: StarRating(
                             initialRating: widget.initalRating,
+                            size: 12,
                           ),
                         ),
                       ],
@@ -390,11 +394,20 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                     CustomButton(
                       buttonText: 'ADD TO CART',
-                      onPressed: () {},
+                      onPressed: () {
+                        _cartController.addToCart(widget.product, counter);
+                        Get.snackbar(
+                          'Added to Cart',
+                          '${widget.product.name} added to cart.',
+                          backgroundColor: Colors.green,
+                          colorText: Colors.white,
+                        );
+                      },
                       width: Get.width * 0.05,
                       height: Get.height * 0.012,
                       icon: Icons.shopping_cart_outlined,
                       fontSize: 13,
+                      backGroundColor: myBrownColor,
                     )
                   ],
                 ),

@@ -135,6 +135,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 width: Get.width * 0.09,
                 height: Get.height * 0.02,
                 fontSize: 14,
+                backGroundColor: myBrownColor,
               ),
             ),
             SizedBox(

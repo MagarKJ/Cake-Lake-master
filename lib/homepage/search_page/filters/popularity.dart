@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Latest extends StatelessWidget {
+class Popularity extends StatelessWidget {
   final List<Product> productlist = MyProductLIst.getProducts();
-  Latest({super.key});
+  Popularity({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: Get.height * 0.8,
       width: Get.width * 0.94,
-      color: Colors.red,
+      color: Colors.blue,
       child: GridView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
@@ -99,13 +99,10 @@ class _ImageItemState extends State<ImageItem> {
               ],
             ),
           ),
-          Container(
-            // color: Colors.amber,
-            child: Padding(
-              padding: EdgeInsets.only(left: Get.width * 0.02),
-              child: StarRating(
-                initialRating: widget.initialrating,
-              ),
+          Padding(
+            padding: EdgeInsets.only(left: Get.width * 0.02),
+            child: StarRating(
+              initialRating: widget.initialrating, size: 12,
             ),
           ),
         ],

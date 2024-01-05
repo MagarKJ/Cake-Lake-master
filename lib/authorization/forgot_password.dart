@@ -78,7 +78,7 @@ class ForgotPassword extends StatelessWidget {
               onPressed: () {},
               width: Get.width * 0.2,
               height: Get.height * 0.015,
-              fontSize: 15,
+              fontSize: 15, backGroundColor: myBrownColor,
             ),
           ),
         ],

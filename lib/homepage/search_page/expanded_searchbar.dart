@@ -1,5 +1,6 @@
 import 'package:cakelake/homepage/products/products_list.dart';
-import 'package:cakelake/homepage/search_page/filters.dart';
+import 'package:cakelake/homepage/search_page/filters/expandedfilter.dart';
+import 'package:cakelake/homepage/search_page/filters/filtersby.dart';
 import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +98,9 @@ class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
                             width: Get.width * 0.06,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              showAlertDialogue(context);
+                            },
                             child: Row(
                               children: [
                                 Text(
@@ -126,6 +129,18 @@ class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
           ),
         ),
       ),
+    );
+  }
+
+  showAlertDialogue(BuildContext context) {
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(builder: (context, setstate) {
+          return const ExpandedFilters();
+        });
+      },
     );
   }
 }

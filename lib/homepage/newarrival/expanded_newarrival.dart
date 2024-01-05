@@ -118,7 +118,7 @@ class _ImageItemState extends State<ImageItem> {
           Padding(
             padding: EdgeInsets.only(left: Get.width * 0.03),
             child: StarRating(
-              initialRating: widget.initialrating,
+              initialRating: widget.initialrating, size: 12,
             ),
           ),
         ],

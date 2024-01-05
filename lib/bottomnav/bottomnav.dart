@@ -1,4 +1,5 @@
 import 'package:cakelake/homepage/homepage.dart';
+import 'package:cakelake/homepage/products/cart.dart';
 import 'package:flutter/material.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
   final List<Widget> _pages = [
     const MyHomePage(),
     const AccountsPage(),
-    const CartsPage(),
+    const CartPage(),
     const MenuPage(),
   ];
 
@@ -72,17 +73,6 @@ class AccountsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('Accounts Page'),
-    );
-  }
-}
-
-class CartsPage extends StatelessWidget {
-  const CartsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Cart Page'),
     );
   }
 }

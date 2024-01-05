@@ -112,7 +112,7 @@ class _ImageItemState extends State<ImageItem> {
                     ),
                     Expanded(
                       flex: 1,
-                      child: StarRating(initialRating: widget.rating),
+                      child: StarRating(initialRating: widget.rating, size: 12,),
                     ),
                   ],
                 ),

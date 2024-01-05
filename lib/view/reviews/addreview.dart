@@ -1,12 +1,13 @@
 import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/button.dart';
+import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AddReview extends StatelessWidget {
-  const AddReview({super.key});
-
+   AddReview({super.key});
+  double rating = 0;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,7 +30,7 @@ class AddReview extends StatelessWidget {
                   width: Get.width * 0.6,
                   child: StarRating(
                     size: Get.height * 0.05,
-                    initialRating: null,
+                    initialRating: rating,
                   ),
                 ),
               ),
@@ -78,6 +79,7 @@ class AddReview extends StatelessWidget {
                   width: Get.width * 0.25,
                   height: Get.height * 0.015,
                   fontSize: 13,
+                  backGroundColor: myBrownColor,
                 ),
               ),
             ],

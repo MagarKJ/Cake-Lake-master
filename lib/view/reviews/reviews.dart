@@ -1,5 +1,6 @@
 import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/button.dart';
+import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,14 +24,14 @@ class Reviewpage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                StarRating(initialRating: 0),
+                StarRating(initialRating: 0, size: 12,),
                 CustomButton(
                   buttonText: 'Add Review',
                   onPressed: () {},
                   width: Get.width * 0.06,
                   height: Get.height * 0.01,
                   fontSize: 13,
-                  icon: Icons.edit_square,
+                  icon: Icons.edit_square, backGroundColor: myBrownColor,
                 ),
               ],
             ),

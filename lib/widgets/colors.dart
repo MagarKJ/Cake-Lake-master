@@ -6,3 +6,4 @@ Color myDarkGrey = const Color(0xFF676767);
 Color myRed = const Color(0xFFFF4B26);
 Color myMainYellow = const Color(0xFFF0A91D);
 Color myStarColor = const Color(0xFFFFA903);
+Color myLightRed = const Color(0xFFEB5757);

@@ -30,7 +30,7 @@ class _NewArrivalState extends State<NewArrival> {
               ),
               GestureDetector(
                 onTap: () {
-                  Get.to(() => ExpandedNewArrival());
+                  Get.to(() => const ExpandedNewArrival());
                 },
                 child: const SeeAll(),
               ),

@@ -1,6 +1,6 @@
-import 'package:cakelake/homepage/search_page/latest.dart';
-import 'package:cakelake/homepage/search_page/popularity.dart';
-import 'package:cakelake/homepage/search_page/relevance.dart';
+import 'package:cakelake/homepage/search_page/filters/latest.dart';
+import 'package:cakelake/homepage/search_page/filters/popularity.dart';
+import 'package:cakelake/homepage/search_page/filters/relevance.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

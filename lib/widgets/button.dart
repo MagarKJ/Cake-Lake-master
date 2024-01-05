@@ -1,4 +1,3 @@
-import 'package:cakelake/widgets/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,6 +9,7 @@ class CustomButton extends StatelessWidget {
   final double height;
   final double fontSize;
   final IconData? icon;
+  final Color backGroundColor;
 
   const CustomButton({
     super.key,
@@ -19,6 +19,7 @@ class CustomButton extends StatelessWidget {
     required this.height,
     this.icon,
     required this.fontSize,
+    required this.backGroundColor,
   });
 
   @override
@@ -26,7 +27,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: myBrownColor,
+        backgroundColor: backGroundColor,
         padding: EdgeInsets.symmetric(
           horizontal: width,
           vertical: height,
@@ -45,6 +46,7 @@ class CustomButton extends StatelessWidget {
             ),
           SizedBox(width: Get.width * 0.02),
           Text(
+            textAlign: TextAlign.center,
             buttonText,
             style: GoogleFonts.montserrat(
               color: Colors.white,
