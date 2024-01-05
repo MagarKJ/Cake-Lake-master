@@ -8,8 +8,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExpandedSearchBar extends StatefulWidget {
+ 
   const ExpandedSearchBar({
     super.key,
+   
   });
 
   @override
@@ -19,6 +21,19 @@ class ExpandedSearchBar extends StatefulWidget {
 class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
   List<Product> productlist = MyProductLIst.getProducts();
   final TextEditingController _searchController = TextEditingController();
+  void showAlertDialogue(BuildContext context) {
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (context, setstate) {
+            return const ExpandedFilters();
+          },
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -129,18 +144,6 @@ class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
           ),
         ),
       ),
-    );
-  }
-
-  showAlertDialogue(BuildContext context) {
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return StatefulBuilder(builder: (context, setstate) {
-          return const ExpandedFilters();
-        });
-      },
     );
   }
 }

@@ -87,20 +87,15 @@ class _LogInState extends State<LogIn> {
                 SizedBox(
                   height: Get.height * 0.07,
                 ),
-                Container(
-                  //  color: Colors.red,
-                  height: Get.height * 0.07,
+                CustomButton(
+                  buttonText: 'Log In',
+                  onPressed: () {
+                    Get.to(() => const MyBottomNavigationBar());
+                  },
                   width: Get.width * 0.6,
-                  alignment: Alignment.center,
-                  child: CustomButton(
-                    buttonText: 'Log In',
-                    onPressed: () {
-                      Get.to(() => const MyBottomNavigationBar());
-                    },
-                    width: Get.width * 0.2,
-                    height: Get.height * 0.015,
-                    fontSize: 15, backGroundColor: myBrownColor,
-                  ),
+                  height: Get.height * 0.07,
+                  fontSize: 15,
+                  backGroundColor: myBrownColor,
                 ),
                 SizedBox(
                   height: Get.height * 0.05,

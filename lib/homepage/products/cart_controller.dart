@@ -10,11 +10,13 @@ class CartController extends GetxController {
     for (int i = 0; i < quantity; i++) {
       cartItems.add(product);
     }
-    update(); // Trigger a rebuild to reflect the changes
+    update();
+
+    // Trigger a rebuild to reflect the changes
   }
 
   void removeFromCart(Product product) {
     cartItems.remove(product);
-    update(); // Trigger a rebuild to reflect the changes
+    // Trigger a rebuild to reflect the changes
   }
 }

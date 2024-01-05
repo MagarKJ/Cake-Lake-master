@@ -16,7 +16,7 @@ class OurOffers extends StatelessWidget {
       width: Get.width * 0.95,
       child: Column(
         children: [
-          const AppHeader(
+           const AppHeader(
             title1: 'Our ',
             title2: 'Offers',
           ),

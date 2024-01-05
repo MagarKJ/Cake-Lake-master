@@ -7,8 +7,14 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
   final String title1;
   final String? title2;
   final IconData? icon;
-
-  const AppHeader({super.key, required this.title1, this.title2, this.icon});
+  // final VoidCallback? onPressed;
+  const AppHeader({
+    super.key,
+    required this.title1,
+    this.title2,
+    this.icon,
+    // this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {

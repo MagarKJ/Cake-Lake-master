@@ -24,38 +24,43 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backGroundColor,
-        padding: EdgeInsets.symmetric(
-          horizontal: width,
-          vertical: height,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(3),
-        ),
-      ),
-      child: Row(
-        children: [
-          if (icon != null) // Conditionally include the icon
-            Icon(
-              icon,
-              size: 20.0, // Adjust the size of the icon as needed
-              color: Colors.white,
-            ),
-          SizedBox(width: Get.width * 0.02),
-          Text(
-            textAlign: TextAlign.center,
-            buttonText,
-            style: GoogleFonts.montserrat(
-              color: Colors.white,
-              fontSize: fontSize,
-              fontWeight: FontWeight.w600,
-            ),
+    return Container(
+      height: height,
+      width: width,
+      child: ElevatedButton(
+        
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          
+          backgroundColor: backGroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+            
           ),
-        ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (icon != null) // Conditionally include the icon
+              Icon(
+                icon,
+                size: 20.0, // Adjust the size of the icon as needed
+                color: Colors.white,
+              ),
+            SizedBox(width: Get.width * 0.02),
+            Text(
+              buttonText,
+              style: GoogleFonts.montserrat(
+                color: Colors.white,
+                fontSize: fontSize,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 }
+
+

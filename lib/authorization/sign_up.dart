@@ -124,19 +124,13 @@ class _CreateAccountState extends State<CreateAccount> {
             SizedBox(
               height: Get.height * 0.03,
             ),
-            Container(
-              //  color: Colors.red,
-              height: Get.height * 0.07,
-              width: Get.width * 0.6,
-              alignment: Alignment.center,
-              child: CustomButton(
-                buttonText: 'Create An Account',
-                onPressed: () {},
-                width: Get.width * 0.09,
-                height: Get.height * 0.02,
-                fontSize: 14,
-                backGroundColor: myBrownColor,
-              ),
+            CustomButton(
+              buttonText: 'Create An Account',
+              onPressed: () {},
+              width: Get.width * 0.55,
+              height: Get.height * 0.06,
+              fontSize: 14,
+              backGroundColor: myBrownColor,
             ),
             SizedBox(
               height: Get.height * 0.05,

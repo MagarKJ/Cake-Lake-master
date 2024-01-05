@@ -18,7 +18,7 @@ class OurOffferList extends StatelessWidget {
       height: Get.height * 0.42,
       child: ListView.builder(
           shrinkWrap: true,
-          physics: const ClampingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           itemCount: productlist.length,
           itemBuilder: (context, index) {
             return Padding(
@@ -112,7 +112,10 @@ class _ImageItemState extends State<ImageItem> {
                     ),
                     Expanded(
                       flex: 1,
-                      child: StarRating(initialRating: widget.rating, size: 12,),
+                      child: StarRating(
+                        initialRating: widget.rating,
+                        size: 12,
+                      ),
                     ),
                   ],
                 ),

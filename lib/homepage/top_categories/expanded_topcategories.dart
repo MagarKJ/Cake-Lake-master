@@ -51,7 +51,7 @@ class _ExpanedTopCategoriesState extends State<ExpanedTopCategories> {
                   );
                 },
               ),
-              const AppHeader(
+               AppHeader(
                 title1: 'Other ',
                 title2: 'Categories',
               ),

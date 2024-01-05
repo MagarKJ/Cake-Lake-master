@@ -221,8 +221,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                       onPressed: () {
                         Get.to(() => AddReview());
                       },
-                      width: Get.width * 0.06,
-                      height: Get.height * 0.01,
+                      width: Get.width * 0.4,
+                      height: Get.height * 0.1,
                       icon: Icons.edit_square,
                       fontSize: 12,
                       backGroundColor: myBrownColor,
@@ -403,10 +403,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                           colorText: Colors.white,
                         );
                       },
-                      width: Get.width * 0.05,
-                      height: Get.height * 0.012,
+                      width: Get.width * 0.45,
+                      height: Get.height * 0.06,
                       icon: Icons.shopping_cart_outlined,
-                      fontSize: 13,
+                      fontSize: 12,
                       backGroundColor: myBrownColor,
                     )
                   ],

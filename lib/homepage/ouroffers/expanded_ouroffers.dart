@@ -25,6 +25,7 @@ class _ExpandedOurOffersState extends State<ExpandedOurOffers> {
         title1: 'Our ',
         title2: 'Offers',
         icon: Icons.arrow_back_ios_new_outlined,
+      
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -119,7 +120,8 @@ class _ImageItemState extends State<ImageItem> {
           Padding(
             padding: EdgeInsets.only(left: Get.width * 0.03),
             child: StarRating(
-              initialRating: widget.initialrating, size: 12,
+              initialRating: widget.initialrating,
+              size: 12,
             ),
           ),
         ],

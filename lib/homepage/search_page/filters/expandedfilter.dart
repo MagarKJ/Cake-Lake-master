@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ExpandedFilters extends StatefulWidget {
-  const ExpandedFilters({super.key});
+  const ExpandedFilters({
+    super.key,
+  });
 
   @override
   State<ExpandedFilters> createState() => _ExpandedFiltersState();
@@ -13,6 +15,7 @@ class ExpandedFilters extends StatefulWidget {
 
 class _ExpandedFiltersState extends State<ExpandedFilters> {
   double rating = 0;
+
   @override
   Widget build(BuildContext context) {
     return StatefulBuilder(
@@ -69,22 +72,23 @@ class _ExpandedFiltersState extends State<ExpandedFilters> {
                 Row(
                   children: [
                     const Text('Min:'),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: myGrey),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        height: Get.height * 0.062,
-                        width: Get.width * 0.2,
-                        child: TextFormField(
-                          keyboardType: TextInputType.number,
-                          autofocus: false,
-                          decoration: const InputDecoration(
-                            hintText: '0',
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.only(left: 10),
-                          ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: myGrey),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      height: Get.height * 0.062,
+                      width: Get.width * 0.2,
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        autofocus: false,
+                        decoration: const InputDecoration(
+                          hintText: ' 0',
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.only(left: 10),
                         ),
                       ),
                     ),
@@ -115,7 +119,7 @@ class _ExpandedFiltersState extends State<ExpandedFilters> {
                   ],
                 ),
                 RangeSlider(
-                  values: const RangeValues(0, 2000),
+                  values: const RangeValues(0, 200),
                   min: 0,
                   max: 2000,
                   onChanged: (value) {},
@@ -129,22 +133,22 @@ class _ExpandedFiltersState extends State<ExpandedFilters> {
                       onPressed: () {
                         Get.back();
                       },
-                      width: 12,
-                      height: 12,
-                      fontSize: 12,
+                      width: Get.width * 0.35,
+                      height: Get.height * 0.06,
+                      fontSize: 10,
                       backGroundColor: myLightRed,
                     ),
                   ),
                   SizedBox(
-                    width: Get.width * 0.04,
+                    width: Get.width * 0.01,
                   ),
                   Expanded(
                     child: CustomButton(
                       buttonText: 'APPLY FILTERS',
                       onPressed: () {},
-                      width: 12,
-                      height: 12,
-                      fontSize: 12,
+                      width: Get.width * 0.35,
+                      height: Get.height * 0.06,
+                      fontSize: 10,
                       backGroundColor: myBrownColor,
                     ),
                   )
