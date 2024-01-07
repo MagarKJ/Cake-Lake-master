@@ -25,7 +25,6 @@ class _ExpandedOurOffersState extends State<ExpandedOurOffers> {
         title1: 'Our ',
         title2: 'Offers',
         icon: Icons.arrow_back_ios_new_outlined,
-      
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -70,6 +69,7 @@ class _ImageItemState extends State<ImageItem> {
       // color: Colors.blue,
       height: Get.height * 0.2,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             // color: Colors.red,

@@ -10,13 +10,13 @@ class OurOffers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       // color: Colors.red,
-      height: Get.height * 0.54,
+      height: Get.height * 0.55,
       width: Get.width * 0.95,
       child: Column(
         children: [
-           const AppHeader(
+          const AppHeader(
             title1: 'Our ',
             title2: 'Offers',
           ),
@@ -24,9 +24,6 @@ class OurOffers extends StatelessWidget {
             height: Get.height * 0.02,
           ),
           OurOffferList(),
-          SizedBox(
-            height: Get.height * 0.01,
-          ),
           Center(
             child: SizedBox(
               height: Get.height * 0.05,

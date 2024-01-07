@@ -64,10 +64,11 @@ class _ImageItemState extends State<ImageItem> {
   double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // color: Colors.blue,
+    return Container(
+      //color: Colors.blue,
       height: Get.height * 0.2,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             // color: Colors.red,
@@ -118,7 +119,8 @@ class _ImageItemState extends State<ImageItem> {
           Padding(
             padding: EdgeInsets.only(left: Get.width * 0.03),
             child: StarRating(
-              initialRating: widget.initialrating, size: 12,
+              initialRating: widget.initialrating,
+              size: 12,
             ),
           ),
         ],

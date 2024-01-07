@@ -2,6 +2,7 @@ import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 
 class Product {
+  final int id;
   final String name;
   final String image;
   final String amount;
@@ -10,6 +11,7 @@ class Product {
   final String? expandedImage;
 
   Product({
+    required this.id,
     required this.name,
     required this.image,
     required this.amount,
@@ -23,6 +25,7 @@ class MyProductLIst extends StatelessWidget {
   static List<Product> getProducts() {
     return [
       Product(
+        id: 1,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product1.jpg',
         expandedImage: mainimage,
@@ -32,6 +35,7 @@ class MyProductLIst extends StatelessWidget {
             'Red Velvet: A decadent cocoa-infused cake with a vibrant red color, perfectly complemented by the creamy goodness of a velvety cream cheese frosting.',
       ),
       Product(
+        id: 2,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product2.jpg',
         expandedImage: 'assets/image/products/mainproducts.jpg',
@@ -41,6 +45,7 @@ class MyProductLIst extends StatelessWidget {
             'Red Velvet: A decadent cocoa-infused cake with a vibrant red color, perfectly complemented by the creamy goodness of a velvety cream cheese frosting.',
       ),
       Product(
+        id: 3,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product3.jpg',
         expandedImage: 'assets/image/products/mainproducts.jpg',
@@ -50,6 +55,7 @@ class MyProductLIst extends StatelessWidget {
             'Red Velvet: A decadent cocoa-infused cake with a vibrant red color, perfectly complemented by the creamy goodness of a velvety cream cheese frosting.',
       ),
       Product(
+        id: 4,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product1.jpg',
         expandedImage: 'assets/image/products/mainproducts.jpg',
@@ -59,6 +65,7 @@ class MyProductLIst extends StatelessWidget {
             'Red Velvet: A decadent cocoa-infused cake with a vibrant red color, perfectly complemented by the creamy goodness of a velvety cream cheese frosting.',
       ),
       Product(
+        id: 5,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product2.jpg',
         expandedImage: 'assets/image/products/mainproducts.jpg',
@@ -68,6 +75,7 @@ class MyProductLIst extends StatelessWidget {
             'Red Velvet: A decadent cocoa-infused cake with a vibrant red color, perfectly complemented by the creamy goodness of a velvety cream cheese frosting.',
       ),
       Product(
+        id: 6,
         name: 'Red Velvet & Cream Cheese',
         image: 'assets/image/new_arrival/Product3.jpg',
         expandedImage: 'assets/image/products/mainproducts.jpg',

@@ -21,6 +21,21 @@ class _CartPageState extends State<CartPage> {
   //counters map, where each product has its own counter. This ensures that each product's quantity is tracked independently.
   late CartController _cartController;
 
+  void moveToPayment() {
+    List<Product> selectedProducts = _cartController.cartItems
+        .where((product) => counters[product]! > 0)
+        .toList();
+    if (selectedProducts.isNotEmpty) {
+      Get.to(() => PaymentMethod(
+            selectedProducts: selectedProducts,
+          ));
+    } else {
+      // Handle the case where no products are selected before navigating.
+      // You can show a message or take appropriate action.
+      print('No products selected for payment.');
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -33,8 +48,15 @@ class _CartPageState extends State<CartPage> {
 
   void increment(Product product) {
     setState(() {
-      counters[product] = (counters[product] ?? 0) + 1;
-      //counters[product] ?? 0 retrieves the current quantity for the given product. If the counter is null (which shouldn't happen due to the initialization in point 2), it defaults to 0.
+      if (counters.containsKey(product)) {
+        // Product is already in the cart, update the quantity
+        counters[product] = counters[product]! + 1;
+      } else {
+        // Product is not in the cart, add it with quantity 1
+        counters[product] = 1;
+        _cartController.addToCart(product,
+            1); // Assuming addToCart requires both product and quantity
+      }
     });
   }
 
@@ -90,7 +112,8 @@ class _CartPageState extends State<CartPage> {
                                       Image.asset(product.image,
                                           fit: BoxFit.cover),
                                       Container(
-                                        width: Get.width * 0.53,
+                                        // color: Colors.red,
+                                        width: Get.width * 0.5,
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -210,7 +233,11 @@ class _CartPageState extends State<CartPage> {
           CustomButton(
             buttonText: 'CHECKOUT',
             onPressed: () {
-              Get.to(() => PaymentMethod());
+              Get.to(() => PaymentMethod(
+                    selectedProducts: _cartController.cartItems
+                        .where((product) => counters[product]! > 0)
+                        .toList(),
+                  ));
             },
             width: Get.width * 0.35,
             height: Get.height * 0.05,

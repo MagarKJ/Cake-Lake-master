@@ -1,3 +1,4 @@
+import 'package:cakelake/homepage/products/products_list.dart';
 import 'package:cakelake/payments/customtick.dart';
 import 'package:cakelake/payments/payment_methodlist.dart';
 import 'package:cakelake/widgets/appbar.dart';
@@ -8,7 +9,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PaymentMethod extends StatefulWidget {
-  PaymentMethod({super.key});
+  final List<Product> selectedProducts;
+  const PaymentMethod({super.key, required this.selectedProducts});
 
   @override
   State<PaymentMethod> createState() => _PaymentMethodState();
@@ -31,6 +33,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
 
   @override
   Widget build(BuildContext context) {
+    List<Product> selectedProducts = widget.selectedProducts;
     return Scaffold(
       appBar: const AppHeader(
         title1: 'Payment',
@@ -162,7 +165,6 @@ class _PaymentMethodState extends State<PaymentMethod> {
                         height: Get.height * 0.01,
                       ),
                       Container(
-                        height: Get.height * 0.29,
                         decoration: BoxDecoration(
                             //   color: Colors.amber,
                             borderRadius: BorderRadius.circular(10),
@@ -190,40 +192,32 @@ class _PaymentMethodState extends State<PaymentMethod> {
                               ),
                               Divider(
                                 color: myLightGrey,
-                                height: 30,
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Red Velvet & Cream Cheese x 1',
-                                    style: GoogleFonts.poppins(
-                                        color: myDarkGrey, fontSize: 13),
-                                  ),
-                                  Text(
-                                    'Rs.1200x1',
-                                    style: GoogleFonts.poppins(
-                                        color: myRed, fontSize: 13),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'White Cake x 1',
-                                    style: GoogleFonts.poppins(
-                                        color: myDarkGrey, fontSize: 13),
-                                  ),
-                                  Text(
-                                    'Rs.1000x1',
-                                    style: GoogleFonts.poppins(
-                                        color: myRed, fontSize: 13),
-                                  ),
-                                ],
-                              ),
+                              for (Product product in selectedProducts)
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Flexible(
+                                      child: Text(
+                                        ' ${product.name}',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: myGrey,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Rs. ${product.price} ',
+                                      style: TextStyle(
+                                        color: myRed,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               Divider(
                                 color: myLightGrey,
                                 height: 30,

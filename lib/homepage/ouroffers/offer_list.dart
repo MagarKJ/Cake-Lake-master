@@ -13,13 +13,13 @@ class OurOffferList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       //color: Colors.red,
-      height: Get.height * 0.42,
+      height: Get.height * 0.44,
       child: ListView.builder(
           shrinkWrap: true,
-          physics: ClampingScrollPhysics(),
-          itemCount: productlist.length,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: 3,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.only(bottom: Get.height * 0.01),
