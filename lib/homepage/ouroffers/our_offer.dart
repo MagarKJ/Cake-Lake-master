@@ -17,7 +17,7 @@ class OurOffers extends StatelessWidget {
       child: Column(
         children: [
           const AppHeader(
-            title1: 'Our ',
+            title1: 'Our',
             title2: 'Offers',
           ),
           SizedBox(
@@ -25,9 +25,10 @@ class OurOffers extends StatelessWidget {
           ),
           OurOffferList(),
           Center(
-            child: SizedBox(
+            child: Container(
+              // color: Colors.red,
               height: Get.height * 0.05,
-              width: Get.width * 0.3,
+              width: Get.width * 0.2,
               child: GestureDetector(
                 onTap: () {
                   Get.to(() => const ExpandedOurOffers());

@@ -43,7 +43,9 @@ class _ImageItemState extends State<ImageItem> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => const ExpanedTopCategories());
+        Get.to(() => ExpanedTopCategories(
+              product: widget.product,
+            ));
       },
       child: Row(
         children: [
@@ -58,7 +60,7 @@ class _ImageItemState extends State<ImageItem> {
               ),
               Center(
                 child: Text(
-                  widget.product.name,
+                  '${widget.product.name1} ${widget.product.name2}',
                   style: GoogleFonts.poppins(
                       fontSize: 12, fontWeight: FontWeight.w600),
                 ),

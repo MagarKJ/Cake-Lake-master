@@ -16,7 +16,7 @@ class TopCatergories extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const AppHeader(
-            title1: 'Top ',
+            title1: 'Top',
             title2: 'Categories',
           ),
           SizedBox(

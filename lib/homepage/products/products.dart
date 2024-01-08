@@ -1,3 +1,4 @@
+import 'package:cakelake/homepage/products/cart.dart';
 import 'package:cakelake/homepage/products/cart_controller.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
 
@@ -6,6 +7,7 @@ import 'package:cakelake/view/reviews/reviews.dart';
 import 'package:cakelake/widgets/button.dart';
 import 'package:cakelake/widgets/colors.dart';
 import 'package:cakelake/widgets/seeall.dart';
+import 'package:cakelake/widgets/snackbar.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -347,14 +349,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Colors.red.shade100),
+                              color: Colors.brown.shade200),
                           child: IconButton(
                             onPressed: () {
                               decrement();
                             },
                             icon: Icon(
                               Icons.remove,
-                              color: Colors.red,
+                              color: myBrownColor,
                               size: Get.height * 0.03,
                             ),
                           ),
@@ -378,7 +380,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                              color: Colors.red),
+                              color: myBrownColor),
                           child: IconButton(
                             onPressed: () {
                               increment();
@@ -396,11 +398,33 @@ class _ProductDetailsState extends State<ProductDetails> {
                       buttonText: 'ADD TO CART',
                       onPressed: () {
                         _cartController.addToCart(widget.product, counter);
+                        // showCustomSnackBar(context, 'Added To Cart');
                         Get.snackbar(
-                          'Added to Cart',
+                          'Added To Cart',
                           '${widget.product.name} added to cart.',
-                          backgroundColor: Colors.green,
+
+                          backgroundColor: myBrownColor,
                           colorText: Colors.white,
+                          onTap: (snack) {
+                            Get.to(() => const CartPage());
+                          },
+                          animationDuration: const Duration(seconds: 2),
+                          // messageText: Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Text(
+                          //       'View Cart',
+                          //       style: GoogleFonts.poppins(
+                          //           color: Colors.white,
+                          //           fontSize: 15,
+                          //           fontWeight: FontWeight.w500),
+                          //     ),
+                          //     const Icon(
+                          //       Icons.arrow_forward,
+                          //       color: Colors.white,
+                          //     )
+                          //   ],
+                          // ),
                         );
                       },
                       width: Get.width * 0.45,

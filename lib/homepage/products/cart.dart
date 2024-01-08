@@ -48,15 +48,8 @@ class _CartPageState extends State<CartPage> {
 
   void increment(Product product) {
     setState(() {
-      if (counters.containsKey(product)) {
-        // Product is already in the cart, update the quantity
-        counters[product] = counters[product]! + 1;
-      } else {
-        // Product is not in the cart, add it with quantity 1
-        counters[product] = 1;
-        _cartController.addToCart(product,
-            1); // Assuming addToCart requires both product and quantity
-      }
+      counters[product] = (counters[product] ?? 0) + 1;
+      //counters[product] ?? 0 retrieves the current quantity for the given product. If the counter is null (which shouldn't happen due to the initialization in point 2), it defaults to 0.
     });
   }
 
@@ -239,8 +232,8 @@ class _CartPageState extends State<CartPage> {
                         .toList(),
                   ));
             },
-            width: Get.width * 0.35,
-            height: Get.height * 0.05,
+            width: Get.width * 0.4,
+            height: Get.height * 0.06,
             fontSize: 12,
             backGroundColor: myBrownColor,
           ),

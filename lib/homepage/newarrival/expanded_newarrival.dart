@@ -21,7 +21,7 @@ class _ExpandedNewArrivalState extends State<ExpandedNewArrival> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppHeader(
-        title1: 'New ',
+        title1: 'New',
         title2: 'Arrival',
         icon: Icons.arrow_back_ios_new_outlined,
       ),
