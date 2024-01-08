@@ -25,7 +25,7 @@ class _NewArrivalState extends State<NewArrival> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const AppHeader(
-                title1: 'New ',
+                title1: 'New',
                 title2: 'Arrival',
               ),
               GestureDetector(

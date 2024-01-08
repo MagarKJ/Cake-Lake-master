@@ -22,7 +22,7 @@ class _ExpandedOurOffersState extends State<ExpandedOurOffers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppHeader(
-        title1: 'Our ',
+        title1: 'Our',
         title2: 'Offers',
         icon: Icons.arrow_back_ios_new_outlined,
       ),

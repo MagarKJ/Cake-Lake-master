@@ -9,8 +9,10 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ExpanedTopCategories extends StatefulWidget {
+  final ProductTop product;
   const ExpanedTopCategories({
     super.key,
+    required this.product,
   });
 
   @override
@@ -25,9 +27,9 @@ class _ExpanedTopCategoriesState extends State<ExpanedTopCategories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppHeader(
-        title1: 'Top ',
-        title2: 'Categories',
+      appBar: AppHeader(
+        title1: widget.product.name1,
+        title2: widget.product.name2,
         icon: Icons.arrow_back_ios_new_outlined,
       ),
       body: SingleChildScrollView(
@@ -51,8 +53,8 @@ class _ExpanedTopCategoriesState extends State<ExpanedTopCategories> {
                   );
                 },
               ),
-               AppHeader(
-                title1: 'Other ',
+              const AppHeader(
+                title1: 'Other',
                 title2: 'Categories',
               ),
               SizedBox(
@@ -133,7 +135,8 @@ class _ImageItemState extends State<ImageItem> {
         Padding(
           padding: EdgeInsets.only(left: Get.width * 0.03),
           child: StarRating(
-            initialRating: widget.initialrating, size: 12,
+            initialRating: widget.initialrating,
+            size: 12,
           ),
         ),
       ],

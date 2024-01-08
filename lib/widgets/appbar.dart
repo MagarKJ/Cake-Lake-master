@@ -41,7 +41,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
               children: <TextSpan>[
                 if (title2 != null)
                   TextSpan(
-                    text: title2,
+                    text: ' $title2',
                     style: GoogleFonts.jost(
                       fontSize: 22,
                       fontWeight: FontWeight.w500,

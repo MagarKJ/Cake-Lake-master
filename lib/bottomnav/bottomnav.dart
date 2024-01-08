@@ -1,3 +1,4 @@
+import 'package:cakelake/accounts/profile.dart';
 import 'package:cakelake/homepage/homepage.dart';
 import 'package:cakelake/homepage/products/cart.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
             label: 'Accounts',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
+            icon: Badge(
+              child: Icon(Icons.shopping_cart_outlined),
+            ),
             label: 'Cart',
           ),
           BottomNavigationBarItem(
@@ -62,17 +65,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('Home Page'),
-    );
-  }
-}
-
-class AccountsPage extends StatelessWidget {
-  const AccountsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Accounts Page'),
     );
   }
 }

@@ -43,7 +43,7 @@ class _NewArrivalListState extends State<NewArrivalList> {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-  final double initialrating = 0;
+  final double userRating = 0;
 
   const ImageItem({super.key, required this.product});
 
@@ -126,10 +126,9 @@ class _ImageItemState extends State<ImageItem> {
               child: Row(
                 children: [
                   StarRating(
-                    initialRating: 2,
+                    initialRating: widget.userRating,
                     size: 12,
                   ),
-                  Text('${widget.initialrating}'),
                 ],
               ),
             ),

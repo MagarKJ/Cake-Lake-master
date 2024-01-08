@@ -133,22 +133,22 @@ class _ExpandedFiltersState extends State<ExpandedFilters> {
                       onPressed: () {
                         Get.back();
                       },
-                      width: Get.width * 0.35,
-                      height: Get.height * 0.06,
-                      fontSize: 10,
+                      width: Get.width * 0.3,
+                      height: Get.height * 0.055,
+                      fontSize: 9,
                       backGroundColor: myLightRed,
                     ),
                   ),
                   SizedBox(
-                    width: Get.width * 0.01,
+                    width: Get.width * 0.02,
                   ),
                   Expanded(
                     child: CustomButton(
                       buttonText: 'APPLY FILTERS',
                       onPressed: () {},
-                      width: Get.width * 0.35,
-                      height: Get.height * 0.06,
-                      fontSize: 10,
+                      width: Get.width * 0.3,
+                      height: Get.height * 0.055,
+                      fontSize: 9,
                       backGroundColor: myBrownColor,
                     ),
                   )
