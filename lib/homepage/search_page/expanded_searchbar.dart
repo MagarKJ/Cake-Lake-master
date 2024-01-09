@@ -2,7 +2,7 @@ import 'package:cakelake/homepage/products/products_list.dart';
 import 'package:cakelake/homepage/search_page/filters/expandedfilter.dart';
 import 'package:cakelake/homepage/search_page/filters/filtersby.dart';
 import 'package:cakelake/widgets/appbar.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,6 +1,7 @@
 import 'package:cakelake/authorization/login.dart';
+import 'package:cakelake/utils/pathing.dart';
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -153,21 +154,21 @@ class _CreateAccountState extends State<CreateAccount> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      child: Image.asset('assets/image/google.png'),
+                      child: Image.asset(googleLogo),
                       onTap: () {},
                     ),
                     SizedBox(
                       width: Get.height * 0.02,
                     ),
                     GestureDetector(
-                      child: Image.asset('assets/image/apple.png'),
+                      child: Image.asset(appleLogo),
                       onTap: () {},
                     ),
                     SizedBox(
                       width: Get.height * 0.02,
                     ),
                     GestureDetector(
-                      child: Image.asset('assets/image/facebook.png'),
+                      child: Image.asset(facebookLogo),
                       onTap: () {},
                     ),
                   ],

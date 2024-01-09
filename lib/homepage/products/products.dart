@@ -1,13 +1,13 @@
 import 'package:cakelake/homepage/products/cart.dart';
 import 'package:cakelake/homepage/products/cart_controller.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
+import 'package:cakelake/utils/pathing.dart';
 
 import 'package:cakelake/view/reviews/addreview.dart';
 import 'package:cakelake/view/reviews/reviews.dart';
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/seeall.dart';
-import 'package:cakelake/widgets/snackbar.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -170,9 +170,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset('assets/image/products/p2.jpg'),
-                    Image.asset('assets/image/products/p1.jpg'),
-                    Image.asset('assets/image/products/p3.jpg'),
+                    Image.asset(flavour1),
+                    Image.asset(flavour2),
+                    Image.asset(flavour3),
                   ],
                 ),
               ),
@@ -276,8 +276,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         const Expanded(
                           flex: 1,
                           child: CircleAvatar(
-                            backgroundImage:
-                                AssetImage('assets/image/image1.jpg'),
+                            backgroundImage: AssetImage(userImage),
                           ),
                         ),
                         Expanded(

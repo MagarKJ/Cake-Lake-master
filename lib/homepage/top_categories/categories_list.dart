@@ -1,3 +1,4 @@
+import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 
 class ProductTop {
@@ -18,22 +19,22 @@ class CategoryList extends StatelessWidget {
       ProductTop(
         name1: 'Blood',
         name2: 'Orange',
-        image: 'assets/image/top_categories/topc1.jpg',
+        image: category1,
       ),
       ProductTop(
         name1: 'White',
         name2: 'Cake',
-        image: 'assets/image/top_categories/topc2.jpg',
+        image: category2,
       ),
       ProductTop(
         name1: 'Chocolate',
         name2: 'Cake',
-        image: 'assets/image/top_categories/topc3.jpg',
+        image: category3,
       ),
       ProductTop(
         name1: 'Panforte',
         name2: 'Cake',
-        image: 'assets/image/top_categories/top4.jpg',
+        image: category4,
       ),
     ];
   }

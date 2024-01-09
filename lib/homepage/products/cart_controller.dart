@@ -19,4 +19,7 @@ class CartController extends GetxController {
     cartItems.remove(product);
     // Trigger a rebuild to reflect the changes
   }
+
+
+  // Calculate the total price of items in the cart
 }

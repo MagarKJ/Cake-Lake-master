@@ -1,5 +1,6 @@
 import 'package:cakelake/homepage/search_page/expanded_searchbar.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/homepage/top_categories/categories_list.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +14,7 @@ class CustomSearchBar extends StatefulWidget {
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final TextEditingController _searchController = TextEditingController();
+  List<ProductTop> categorylist = CategoryList.wantProduct();
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      Get.to(() => ExpandedSearchBar());
+                      Get.to(() => const ExpandedSearchBar());
                     },
                     icon: const Icon(
                       Icons.search,
@@ -69,7 +71,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.menu),
-          )
+          ),
         ],
       ),
     );

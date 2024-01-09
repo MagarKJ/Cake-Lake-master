@@ -1,8 +1,9 @@
 import 'package:cakelake/authorization/forgot_password.dart';
 import 'package:cakelake/authorization/sign_up.dart';
 import 'package:cakelake/bottomnav/bottomnav.dart';
+import 'package:cakelake/utils/pathing.dart';
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -118,21 +119,21 @@ class _LogInState extends State<LogIn> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          child: Image.asset('assets/image/google.png'),
+                          child: Image.asset(googleLogo),
                           onTap: () {},
                         ),
                         SizedBox(
                           width: Get.height * 0.02,
                         ),
                         GestureDetector(
-                          child: Image.asset('assets/image/apple.png'),
+                          child: Image.asset(appleLogo),
                           onTap: () {},
                         ),
                         SizedBox(
                           width: Get.height * 0.02,
                         ),
                         GestureDetector(
-                          child: Image.asset('assets/image/facebook.png'),
+                          child: Image.asset(facebookLogo),
                           onTap: () {},
                         ),
                       ],

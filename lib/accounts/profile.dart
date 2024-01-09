@@ -1,6 +1,7 @@
+import 'package:cakelake/utils/pathing.dart';
 import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,10 +23,10 @@ class _AccountsPageState extends State<AccountsPage> {
         title2: 'Profile',
         icon: Icons.arrow_back_ios_new,
       ),
-      body: Padding(
-        padding: EdgeInsets.only(left: Get.width * 0.05),
+      body: Align(
+        alignment: Alignment.topCenter,
         child: Container(
-          // color: Colors.amber,
+          //color: Colors.amber,
           width: Get.width * 0.9,
           height: Get.height * 0.7,
           child: Column(
@@ -42,8 +43,7 @@ class _AccountsPageState extends State<AccountsPage> {
                         child: Row(
                           children: [
                             CircleAvatar(
-                              backgroundImage:
-                                  const AssetImage('assets/image/image1.jpg'),
+                              backgroundImage: const AssetImage(userImage),
                               radius: Get.width * 0.1,
                             ),
                             SizedBox(
@@ -83,7 +83,7 @@ class _AccountsPageState extends State<AccountsPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Eric Thapa',
+                          'Eric Ale',
                           style: GoogleFonts.poppins(
                               fontSize: 20, color: myBrownColor),
                         ),

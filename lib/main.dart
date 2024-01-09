@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       home: const Scaffold(
         resizeToAvoidBottomInset:
             false, // bottomnav does not show when keyboard pops
-        body: MyBottomNavigationBar(),
+        body: SplashScreen(),
       ),
     );
   }

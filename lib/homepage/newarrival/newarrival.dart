@@ -18,28 +18,31 @@ class _NewArrivalState extends State<NewArrival> {
     return SizedBox(
       //color: Colors.red,
       height: Get.height * 0.38,
-      width: Get.width * 0.94,
+      width: double.infinity,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const AppHeader(
-                title1: 'New',
-                title2: 'Arrival',
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.to(() => const ExpandedNewArrival());
-                },
-                child: const SeeAll(),
-              ),
-            ],
+          Container(
+            width: Get.width * 0.95,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const AppHeader(
+                  title1: 'New',
+                  title2: 'Arrival',
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.to(() => const ExpandedNewArrival());
+                  },
+                  child: const SeeAll(),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: Get.height * 0.02,
           ),
-          NewArrivalList(),
+          const NewArrivalList(),
         ],
       ),
     );

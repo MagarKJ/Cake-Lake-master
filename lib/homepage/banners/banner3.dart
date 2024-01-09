@@ -1,3 +1,4 @@
+import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +19,7 @@ class _MyBanner3State extends State<MyBanner3> {
       child: Stack(
         children: [
           Image.asset(
-            'assets/image/banner/Bannar_Big.jpg',
+            bigBanner,
             height: Get.height * 0.225,
             fit: BoxFit.cover,
           ),

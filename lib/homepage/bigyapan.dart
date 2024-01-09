@@ -1,3 +1,4 @@
+import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,7 +15,7 @@ class Bigyapan extends StatelessWidget {
           height: Get.height * 0.22,
           width: Get.width,
           child: Image.asset(
-            'assets/image/adds/add1.jpg',
+            add,
             fit: BoxFit.cover,
           ),
         ),
