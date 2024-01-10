@@ -119,12 +119,13 @@ class _ExpandedFiltersState extends State<ExpandedFilters> {
                   ],
                 ),
                 RangeSlider(
-                  values: const RangeValues(0, 200),
+                  values: const RangeValues(0, 2000),
                   min: 0,
                   max: 2000,
                   onChanged: (value) {},
                   activeColor: myBrownColor,
                   divisions: 50,
+                  
                 ),
                 Row(children: [
                   Expanded(

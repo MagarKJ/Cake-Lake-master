@@ -2,6 +2,7 @@ import 'package:cakelake/authorization/sign_up.dart';
 import 'package:cakelake/onboarding_screen/choose_product.dart';
 import 'package:cakelake/onboarding_screen/get_order.dart';
 import 'package:cakelake/onboarding_screen/make_payment.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -111,20 +112,20 @@ class _OnBoardScreenState extends State<OnBoardScreen> {
                       }
                     },
                     child: currentPage == 2
-                        ? const Text(
+                        ? Text(
                             'Start',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: myGold,
                             ),
                           )
-                        : const Text(
+                        : Text(
                             'Next',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black,
+                              color: myGold,
                             ),
                           ),
                   ),

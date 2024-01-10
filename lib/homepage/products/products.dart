@@ -285,7 +285,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Eric Thapa',
+                                'Eric Ale',
                                 style: GoogleFonts.poppins(
                                     color: myBrownColor,
                                     fontWeight: FontWeight.w600,
@@ -296,6 +296,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                                   Icon(
                                     Icons.timer_outlined,
                                     color: myGrey,
+                                    size: Get.width * 0.035,
+                                  ),
+                                  SizedBox(
+                                    width: 4,
                                   ),
                                   Text(
                                     '13 sep, 2023',

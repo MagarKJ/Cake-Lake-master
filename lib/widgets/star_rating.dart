@@ -5,7 +5,12 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class StarRating extends StatefulWidget {
   double initialRating;
   double size;
-  StarRating({super.key, required this.initialRating, required this.size});
+
+  StarRating({
+    super.key,
+    required this.initialRating,
+    required this.size,
+  });
 
   @override
   State<StarRating> createState() => _StarRatingState();

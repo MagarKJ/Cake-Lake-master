@@ -12,11 +12,11 @@ class SeeAll extends StatelessWidget {
         Text(
           'SEE ALL',
           style: GoogleFonts.mulish(
-              color: myMainYellow, fontSize: 12, fontWeight: FontWeight.w800),
+              color: myGold, fontSize: 12, fontWeight: FontWeight.w800),
         ),
         Icon(
           Icons.arrow_forward_ios,
-          color: myMainYellow,
+          color: myGold,
           size: 16,
         ),
       ],
