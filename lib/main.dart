@@ -17,17 +17,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Bakery',
-      theme: ThemeData(),
-      debugShowCheckedModeBanner: false,
-      initialBinding: BindingsBuilder(() {
-        Get.put(CartController());
-      }),
-      home: const Scaffold(
-        resizeToAvoidBottomInset:
-            false, // bottomnav does not show when keyboard pops
-        body: MyBottomNavigationBar(),
-      ),
-    );
+        title: 'Bakery',
+        theme: ThemeData(),
+        debugShowCheckedModeBanner: false,
+        initialBinding: BindingsBuilder(() {
+          Get.put(CartController());
+        }),
+        home: SplashScreen()
+        // home: const Scaffold(
+        //   resizeToAvoidBottomInset:
+        //       false, // bottomnav does not show when keyboard pops
+        //   body: MyBottomNavigationBar(),
+        // ),
+        );
   }
 }

@@ -28,6 +28,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         children: [
           Expanded(
             child: TextField(
+              onTap: () => Get.to(() => ExpandedSearchBar()),
+              readOnly: true,
               controller: _searchController,
               onChanged: (value) {
                 setState(() {});
@@ -50,7 +52,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      Get.to(() => ExpandedSearchBar());
+                      // Get.to(() => ExpandedSearchBar());
                     },
                     icon: const Icon(
                       Icons.search,
