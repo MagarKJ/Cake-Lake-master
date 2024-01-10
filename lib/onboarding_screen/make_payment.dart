@@ -1,4 +1,5 @@
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
+import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +23,7 @@ class MakePayment extends StatelessWidget {
                   child: Column(
                     children: [
                       Image.asset(
-                        'assets/splash_screen/Sales_consulting.jpg',
+                        makePayment,
                         height: Get.height * 0.28,
                         width: Get.width * 0.86,
                       ),

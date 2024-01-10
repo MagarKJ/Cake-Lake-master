@@ -6,17 +6,20 @@ import 'package:google_fonts/google_fonts.dart';
 
 class TopCategoriesList extends StatelessWidget {
   final List<ProductTop> categorylist = CategoryList.wantProduct();
-  TopCategoriesList({super.key});
+  TopCategoriesList({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // color: Colors.black,
+      //color: Colors.black,
       height: Get.height * 0.2,
-      width: Get.width * 0.94,
+      width: double.infinity,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 4,
+          padding: EdgeInsets.symmetric(horizontal: 15),
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: Get.width * 0.01),

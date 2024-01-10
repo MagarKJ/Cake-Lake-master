@@ -1,5 +1,5 @@
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -50,37 +50,34 @@ class ForgotPassword extends StatelessWidget {
                   height: Get.height * 0.04,
                 ),
                 RichText(
-                    text: TextSpan(
-                        text: "*",
-                        style: const TextStyle(color: Color(0xFFFF4B26)),
-                        children: [
+                  text: TextSpan(
+                    text: "*",
+                    style: const TextStyle(color: Color(0xFFFF4B26)),
+                    children: [
                       TextSpan(
-                          text:
-                              " We will send you a message to set or reset your new password",
-                          style: GoogleFonts.montserrat(
-                              color: myDarkGrey,
-                              fontSize: 11.43,
-                              fontWeight: FontWeight.w400))
-                    ])),
+                        text:
+                            " We will send you a message to set or reset your new password",
+                        style: GoogleFonts.montserrat(
+                            color: myDarkGrey,
+                            fontSize: 11.43,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
           SizedBox(
             height: Get.height * 0.04,
           ),
-          Container(
-            //  color: Colors.red,
+          CustomButton(
+            buttonText: 'Submit',
+            onPressed: () {},
+            width: Get.width * 0.5,
             height: Get.height * 0.07,
-            width: Get.width * 0.6,
-            alignment: Alignment.center,
-            child: CustomButton(
-              buttonText: 'Submit',
-              onPressed: () {},
-              width: Get.width * 0.2,
-              height: Get.height * 0.015,
-              fontSize: 15,
-              backGroundColor: myBrownColor,
-            ),
+            fontSize: 15,
+            backGroundColor: myBrownColor,
           ),
         ],
       ),

@@ -1,6 +1,7 @@
+import 'package:cakelake/homepage/products/products.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
 import 'package:cakelake/widgets/appbar.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,22 +26,29 @@ class _ExpandedNewArrivalState extends State<ExpandedNewArrival> {
         title2: 'Arrival',
         icon: Icons.arrow_back_ios_new_outlined,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: GridView.builder(
-          scrollDirection: Axis.vertical,
-          shrinkWrap: true,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 5,
-            mainAxisExtent: Get.height * 0.32,
+      body: Center(
+        child: Container(
+          //color: Colors.red,
+          width: Get.width * 0.96,
+          child: GridView.builder(
+            scrollDirection: Axis.vertical,
+            padding: EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 5,
+              mainAxisExtent: Get.height * 0.32,
+              crossAxisSpacing: 4,
+            ),
+            itemCount: productlist.length,
+            itemBuilder: (context, index) {
+              return ImageItem(
+                product: productlist[index],
+              );
+            },
           ),
-          itemCount: productlist.length,
-          itemBuilder: (context, index) {
-            return ImageItem(
-              product: productlist[index],
-            );
-          },
         ),
       ),
     );
@@ -64,66 +72,67 @@ class _ImageItemState extends State<ImageItem> {
   double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      //color: Colors.blue,
-      height: Get.height * 0.2,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            // color: Colors.red,
-            width: Get.width * 0.44,
-            child: Image.asset(
-              widget.product.image,
-              fit: BoxFit.fill,
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => ProductDetails(product: widget.product));
+      },
+      child: Container(
+        //color: Colors.blue,
+        height: Get.height * 0.24,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              // color: Colors.red,
+              width: Get.width * 0.45,
+              child: Image.asset(
+                widget.product.image,
+                fit: BoxFit.fill,
+              ),
             ),
-          ),
-          SizedBox(
-            height: Get.height * 0.015,
-          ),
-          SizedBox(
-            height: Get.height * 0.05,
-            width: Get.width * 0.41,
-            // color: Colors.blue,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    //  color: Colors.red,
-                    height: Get.height * 0.04,
-                    width: Get.width * 0.28,
-                    child: Text(
-                      '${widget.product.name} ( ${widget.product.amount} )',
-                      style: GoogleFonts.poppins(
-                          fontSize: 11, fontWeight: FontWeight.w600),
-                      overflow: TextOverflow.clip,
-                    ),
-                  ),
+            SizedBox(
+              height: Get.height * 0.01,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                height: Get.height * 0.042,
+                width: Get.width * 0.4,
+                // color: Colors.blue,
+                child: Text(
+                  '${widget.product.name} ( ${widget.product.amount} )',
+                  style: GoogleFonts.poppins(
+                      fontSize: 12, fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.clip,
                 ),
-                SizedBox(
-                  //color: Colors.orange,
-                  height: Get.height * 0.04,
-                  width: Get.width * 0.12,
-                  child: Text(
-                    'Rs.${widget.product.price}',
-                    style: GoogleFonts.poppins(
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: myRed),
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: Get.width * 0.03),
-            child: StarRating(
-              initialRating: widget.initialrating,
-              size: 12,
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                // color: Colors.orange,
+                height: Get.height * 0.03,
+                width: Get.width * 0.15,
+                child: Text(
+                  'Rs.${widget.product.price}',
+                  style: GoogleFonts.poppins(
+                      fontSize: 12, fontWeight: FontWeight.w600, color: myRed),
+                ),
+              ),
             ),
-          ),
-        ],
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                width: Get.width * 0.3,
+                child: StarRating(
+                  initialRating: widget.initialrating,
+                  size: 12,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

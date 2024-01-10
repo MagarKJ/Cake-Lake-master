@@ -27,7 +27,7 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 1,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product1.jpg',
+        image: product1,
         expandedImage: mainimage,
         amount: '500g',
         price: 1500,
@@ -37,8 +37,8 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 2,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product2.jpg',
-        expandedImage: 'assets/image/products/mainproducts.jpg',
+        image: product2,
+        expandedImage: mainimage,
         amount: '500g',
         price: 1200,
         description:
@@ -47,8 +47,8 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 3,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product3.jpg',
-        expandedImage: 'assets/image/products/mainproducts.jpg',
+        image: product1,
+        expandedImage: mainimage,
         amount: '500g',
         price: 1200,
         description:
@@ -57,8 +57,8 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 4,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product1.jpg',
-        expandedImage: 'assets/image/products/mainproducts.jpg',
+        image: product2,
+        expandedImage: mainimage,
         amount: '500g',
         price: 1200,
         description:
@@ -67,8 +67,8 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 5,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product2.jpg',
-        expandedImage: 'assets/image/products/mainproducts.jpg',
+        image: product1,
+        expandedImage: mainimage,
         amount: '500g',
         price: 1200,
         description:
@@ -77,8 +77,8 @@ class MyProductLIst extends StatelessWidget {
       Product(
         id: 6,
         name: 'Red Velvet & Cream Cheese',
-        image: 'assets/image/new_arrival/Product3.jpg',
-        expandedImage: 'assets/image/products/mainproducts.jpg',
+        image: product2,
+        expandedImage: mainimage,
         amount: '500g',
         price: 1200,
         description:

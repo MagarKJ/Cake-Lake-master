@@ -1,6 +1,6 @@
 import 'package:cakelake/homepage/products/products.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/hotsale_logo.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class NewArrivalList extends StatefulWidget {
-  NewArrivalList({
+  const NewArrivalList({
     super.key,
   });
 
@@ -27,16 +27,21 @@ class _NewArrivalListState extends State<NewArrivalList> {
     return SizedBox(
       //color: Colors.black,
       height: Get.height * 0.32,
-      width: Get.width * 0.94,
-      child: ListView.builder(
+      width: double.infinity,
+      child: ListView.separated(
+          shrinkWrap: true,
+          padding: const EdgeInsets.symmetric(horizontal: 8),
           scrollDirection: Axis.horizontal,
-          // itemCount: (products.length / 2)
+          // itemCount: (products.length / 2),
           itemCount: 3,
           itemBuilder: (context, index) {
             return ImageItem(
               product: productlist[index],
             );
-          }),
+          },
+          separatorBuilder: (context, index) => SizedBox(
+                width: Get.width * 0.02,
+              )),
     );
   }
 }
@@ -64,6 +69,7 @@ class _ImageItemState extends State<ImageItem> {
         //color: Colors.blue,
         height: Get.height * 0.32,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -85,51 +91,46 @@ class _ImageItemState extends State<ImageItem> {
             SizedBox(
               height: Get.height * 0.015,
             ),
-            SizedBox(
-              height: Get.height * 0.05,
-              width: Get.width * 0.42,
-              // color: Colors.blue,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      //  color: Colors.red,
-                      height: Get.height * 0.04,
-                      width: Get.width * 0.28,
-                      child: Text(
-                        '${widget.product.name} ( ${widget.product.amount} )',
-                        style: GoogleFonts.poppins(
-                            fontSize: 11, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    //color: Colors.orange,
-                    height: Get.height * 0.04,
-                    width: Get.width * 0.12,
-                    child: Text(
-                      'Rs.${widget.product.price}',
-                      style: GoogleFonts.poppins(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w600,
-                          color: myRed),
-                    ),
-                  )
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                height: Get.height * 0.042,
+                width: Get.width * 0.38,
+                // color: Colors.blue,
+                child: Text(
+                  '${widget.product.name} ( ${widget.product.amount} )',
+                  style: GoogleFonts.poppins(
+                      fontSize: 12, fontWeight: FontWeight.w600),
+                ),
               ),
             ),
-            Container(
-              //color: Colors.red,
-              height: Get.height * 0.02,
-              width: Get.width * 0.41,
-              child: Row(
-                children: [
-                  StarRating(
-                    initialRating: widget.userRating,
-                    size: 12,
-                  ),
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                // color: Colors.orange,
+                height: Get.height * 0.022,
+                width: Get.width * 0.12,
+                child: Text(
+                  'Rs.${widget.product.price}',
+                  style: GoogleFonts.poppins(
+                      fontSize: 12, fontWeight: FontWeight.w600, color: myRed),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                //  color: Colors.red,
+                height: Get.height * 0.02,
+                width: Get.width * 0.35,
+                child: Row(
+                  children: [
+                    StarRating(
+                      initialRating: widget.userRating,
+                      size: 12,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

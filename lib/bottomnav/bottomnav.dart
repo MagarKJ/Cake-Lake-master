@@ -1,6 +1,7 @@
 import 'package:cakelake/accounts/profile.dart';
 import 'package:cakelake/homepage/homepage.dart';
 import 'package:cakelake/homepage/products/cart.dart';
+import 'package:cakelake/menu/menu.dart';
 import 'package:flutter/material.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
@@ -17,7 +18,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
     const MyHomePage(),
     const AccountsPage(),
     const CartPage(),
-    const MenuPage(),
+    const MyMenu(),
   ];
 
   @override
@@ -44,6 +45,7 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           ),
           BottomNavigationBarItem(
             icon: Badge(
+              label: Text('1'),
               child: Icon(Icons.shopping_cart_outlined),
             ),
             label: 'Cart',
@@ -54,28 +56,6 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Home Page'),
-    );
-  }
-}
-
-class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Menu Page'),
     );
   }
 }

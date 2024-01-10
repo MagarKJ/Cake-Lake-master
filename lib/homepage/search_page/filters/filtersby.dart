@@ -1,7 +1,7 @@
 import 'package:cakelake/homepage/search_page/filters/latest.dart';
 import 'package:cakelake/homepage/search_page/filters/popularity.dart';
 import 'package:cakelake/homepage/search_page/filters/relevance.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

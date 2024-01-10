@@ -3,7 +3,7 @@ import 'package:cakelake/payments/customtick.dart';
 import 'package:cakelake/payments/payment_methodlist.dart';
 import 'package:cakelake/widgets/appbar.dart';
 import 'package:cakelake/widgets/button.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -77,7 +77,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                 child: Image.asset(
                                   'assets/image/payment_opt/ward7.jpg',
                                   fit: BoxFit.cover,
-                                ),
+                                ), 
                               ),
                             ),
                             Padding(
@@ -310,16 +310,15 @@ class _PaymentMethodState extends State<PaymentMethod> {
 
 class PaymentItems extends StatefulWidget {
   final Payment paymentmtd;
+  int selectedIndex;
+  Function onTap;
+  int index;
   PaymentItems(
       {super.key,
       required this.paymentmtd,
       required this.onTap,
       required this.selectedIndex,
       required this.index});
-
-  int selectedIndex;
-  Function onTap;
-  int index;
 
   @override
   State<PaymentItems> createState() => _PaymentItemsState();

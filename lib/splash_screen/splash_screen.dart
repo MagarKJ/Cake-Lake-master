@@ -1,4 +1,5 @@
 import 'package:cakelake/onboarding_screen/onboarding_screen.dart';
+import 'package:cakelake/utils/pathing.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -45,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: FadeInImage(
                     placeholder: MemoryImage(kTransparentImage),
                     fadeOutDuration: const Duration(milliseconds: 150),
-                    image: const AssetImage('assets/splash_screen/image1.png'),
+                    image: const AssetImage(splashScreen),
                   ),
                 ),
               ],

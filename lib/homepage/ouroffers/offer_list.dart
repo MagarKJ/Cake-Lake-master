@@ -1,6 +1,6 @@
 import 'package:cakelake/homepage/products/products.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,6 +1,6 @@
-
+import 'package:cakelake/homepage/products/products.dart';
 import 'package:cakelake/homepage/products/products_list.dart';
-import 'package:cakelake/widgets/colors.dart';
+import 'package:cakelake/utils/colors.dart';
 import 'package:cakelake/widgets/star_rating.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,23 +12,30 @@ class Relevance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: Get.height * 0.8,
-      width: Get.width * 0.94,
-      color: Colors.white,
-      child: GridView.builder(
-        scrollDirection: Axis.vertical,
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisExtent: Get.height * 0.32,
+    return Center(
+      child: Container(
+        //color: Colors.red,
+        width: Get.width * 0.96,
+        height: Get.height * 0.8,
+        child: GridView.builder(
+          scrollDirection: Axis.vertical,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+          ),
+          shrinkWrap: true,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 5,
+            mainAxisExtent: Get.height * 0.32,
+            crossAxisSpacing: 4,
+          ),
+          itemCount: productlist.length,
+          itemBuilder: (context, index) {
+            return ImageItem(
+              product: productlist[index],
+            );
+          },
         ),
-        itemCount: productlist.length,
-        itemBuilder: (context, index) {
-          return ImageItem(
-            product: productlist[index],
-          );
-        },
       ),
     );
   }
@@ -36,7 +43,7 @@ class Relevance extends StatelessWidget {
 
 class ImageItem extends StatefulWidget {
   final Product product;
-final  double initialrating = 0;
+  final double initialrating = 0;
 
   const ImageItem({
     super.key,
@@ -51,57 +58,68 @@ class _ImageItemState extends State<ImageItem> {
   double initalRating = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          // color: Colors.red,
-          width: Get.width * 0.44,
-          child: Image.asset(
-            widget.product.image,
-            fit: BoxFit.fill,
-          ),
-        ),
-        SizedBox(
-          height: Get.height * 0.015,
-        ),
-        Container(
-          height: Get.height * 0.05,
-          width: Get.width * 0.41,
-          // color: Colors.blue,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                // color: Colors.red,
-                height: Get.height * 0.04,
-                width: Get.width * 0.28,
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => ProductDetails(product: widget.product));
+      },
+      child: Container(
+        //color: Colors.blue,
+        height: Get.height * 0.24,
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              // color: Colors.red,
+              width: Get.width * 0.45,
+              child: Image.asset(
+                widget.product.image,
+                fit: BoxFit.fill,
+              ),
+            ),
+            SizedBox(
+              height: Get.height * 0.01,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                height: Get.height * 0.042,
+                width: Get.width * 0.4,
+                // color: Colors.blue,
                 child: Text(
                   '${widget.product.name} ( ${widget.product.amount} )',
                   style: GoogleFonts.poppins(
-                      fontSize: 11, fontWeight: FontWeight.w600),
+                      fontSize: 12, fontWeight: FontWeight.w600),
                   overflow: TextOverflow.clip,
                 ),
               ),
-              Container(
-                //  color: Colors.orange,
-                height: Get.height * 0.04,
-                width: Get.width * 0.12,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                // color: Colors.orange,
+                height: Get.height * 0.03,
+                width: Get.width * 0.15,
                 child: Text(
                   'Rs.${widget.product.price}',
                   style: GoogleFonts.poppins(
-                      fontSize: 10, fontWeight: FontWeight.w600, color: myRed),
+                      fontSize: 12, fontWeight: FontWeight.w600, color: myRed),
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Get.width * 0.03),
+              child: Container(
+                width: Get.width * 0.3,
+                child: StarRating(
+                  initialRating: widget.initialrating,
+                  size: 12,
+                ),
+              ),
+            ),
+          ],
         ),
-        Padding(
-          padding: EdgeInsets.only(left: Get.width * 0.02),
-          child: StarRating(
-            initialRating: widget.initialrating, size: 12,
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
