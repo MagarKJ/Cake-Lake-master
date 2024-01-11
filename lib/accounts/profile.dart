@@ -18,10 +18,8 @@ class _AccountsPageState extends State<AccountsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppHeader(
-        title1: 'My',
-        title2: 'Profile',
-        icon: Icons.arrow_back_ios_new,
+      appBar: AppBar(
+        title: AppHeader(title1: 'My', title2: 'Profile'),
       ),
       body: Align(
         alignment: Alignment.topCenter,

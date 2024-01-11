@@ -1,6 +1,6 @@
 import 'package:cakelake/accounts/profile.dart';
-import 'package:cakelake/homepage/homepage.dart';
-import 'package:cakelake/homepage/products/cart.dart';
+import 'package:cakelake/featrures/homepage/homepage.dart';
+import 'package:cakelake/cart/cart.dart';
 import 'package:cakelake/menu/menu.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,6 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
           ),
           BottomNavigationBarItem(
             icon: Badge(
-              label: Text('1'),
               child: Icon(Icons.shopping_cart_outlined),
             ),
             label: 'Cart',

@@ -1,8 +1,9 @@
 import 'package:cakelake/bottomnav/bottomnav.dart';
-import 'package:cakelake/homepage/products/cart_controller.dart';
+import 'package:cakelake/cart/cart_controller.dart';
 import 'package:cakelake/splash_screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -16,6 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark));
+
     return GetMaterialApp(
       title: 'Bakery',
       theme: ThemeData(),
@@ -26,7 +31,7 @@ class MyApp extends StatelessWidget {
       home: const Scaffold(
         resizeToAvoidBottomInset:
             false, // bottomnav does not show when keyboard pops
-        body: SplashScreen(),
+        body: MyBottomNavigationBar(),
       ),
     );
   }

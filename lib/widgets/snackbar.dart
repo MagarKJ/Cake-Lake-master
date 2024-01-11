@@ -1,4 +1,4 @@
-import 'package:cakelake/homepage/products/cart.dart';
+import 'package:cakelake/cart/cart.dart';
 import 'package:cakelake/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
