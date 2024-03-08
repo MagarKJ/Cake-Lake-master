@@ -102,7 +102,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         borderRadius: BorderRadius.circular(5.0)),
                   ),
                 ),
-                Container(
+                SizedBox(
                   //color: Colors.red,
                   height: Get.height * 0.14,
                   width: Get.width * 0.7,
@@ -115,7 +115,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   // color: Colors.blue,
                   height: Get.height * 0.05,
                   width: Get.width * 0.9,
@@ -127,7 +127,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         fontWeight: FontWeight.w700),
                   ),
                 ),
-                Container(
+                SizedBox(
                   //color: Colors.orange,
                   height: Get.height * 0.12,
                   width: Get.width * 0.9,
@@ -140,7 +140,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ),
                   ),
                 ),
-                Container(
+                SizedBox(
                   // color: Colors.orange,
                   height: Get.height * 0.04,
                   width: Get.width * 0.9,
@@ -152,7 +152,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                         color: myRed),
                   ),
                 ),
-                Container(
+                SizedBox(
                   // color: Colors.blue,
                   height: Get.height * 0.06,
                   width: Get.width * 0.9,
@@ -180,7 +180,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 SizedBox(
                   height: Get.height * 0.03,
                 ),
-                Container(
+                SizedBox(
                   // color: Colors.blue,
                   height: Get.height * 0.03,
                   width: Get.width * 0.9,
@@ -204,7 +204,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 SizedBox(
                   height: Get.height * 0.01,
                 ),
-                Container(
+                SizedBox(
                   // color: Colors.blue,
                   height: Get.height * 0.15,
                   width: Get.width * 0.9,
@@ -239,7 +239,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       color: myGrey,
                                       size: Get.width * 0.035,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 4,
                                     ),
                                     Text(
@@ -281,7 +281,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   //color: Colors.blue,
                   height: Get.height * 0.1,
                   width: Get.width * 0.9,
@@ -385,7 +385,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Positioned(
             top: 25,
-            child: Container(
+            child: SizedBox(
               // color: Colors.red,
               height: Get.height * 0.07,
               width: Get.width * 0.88,

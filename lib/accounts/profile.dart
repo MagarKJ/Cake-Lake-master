@@ -19,11 +19,11 @@ class _AccountsPageState extends State<AccountsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: AppHeader(title1: 'My', title2: 'Profile'),
+        title: const AppHeader(title1: 'My', title2: 'Profile'),
       ),
       body: Align(
         alignment: Alignment.topCenter,
-        child: Container(
+        child: SizedBox(
           //color: Colors.amber,
           width: Get.width * 0.9,
           height: Get.height * 0.7,
@@ -36,20 +36,17 @@ class _AccountsPageState extends State<AccountsPage> {
                   ),
                   Stack(
                     children: [
-                      Container(
-                        //color: Colors.amber,
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: const AssetImage(userImage),
-                              radius: Get.width * 0.1,
-                            ),
-                            SizedBox(
-                              width: Get.width * 0.04,
-                              height: Get.height * 0.12,
-                            ),
-                          ],
-                        ),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: const AssetImage(userImage),
+                            radius: Get.width * 0.1,
+                          ),
+                          SizedBox(
+                            width: Get.width * 0.04,
+                            height: Get.height * 0.12,
+                          ),
+                        ],
                       ),
                       Positioned(
                         bottom: 0,
@@ -73,7 +70,7 @@ class _AccountsPageState extends State<AccountsPage> {
                       ),
                     ],
                   ),
-                  Container(
+                  SizedBox(
                     width: Get.width * 0.5,
                     //color: Colors.red,
                     height: Get.height * 0.1,
@@ -125,7 +122,7 @@ class _AccountsPageState extends State<AccountsPage> {
               SizedBox(
                 height: Get.height * 0.04,
               ),
-              Container(
+              SizedBox(
                 // color: Colors.red,
                 height: Get.height * 0.4,
                 width: Get.width * 0.9,
@@ -143,32 +140,30 @@ class _AccountsPageState extends State<AccountsPage> {
                         () {}),
                     _buildRowContent(context, 'Change Password',
                         Icons.vpn_key_outlined, Icons.arrow_forward_ios, () {}),
-                    Container(
+                    SizedBox(
                       //   color: Colors.red,
                       height: Get.height * 0.06,
                       width: Get.width * 0.82,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.feed_outlined,
-                                  color: myBrownColor,
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.feed_outlined,
+                                color: myBrownColor,
+                              ),
+                              SizedBox(
+                                width: Get.width * 0.03,
+                              ),
+                              Text(
+                                'Newsletter Subscription',
+                                style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
                                 ),
-                                SizedBox(
-                                  width: Get.width * 0.03,
-                                ),
-                                Text(
-                                  'Newsletter Subscription',
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 14,
-                                  ),
-                                )
-                              ],
-                            ),
+                              )
+                            ],
                           ),
                           Switch(
                             value: s1,

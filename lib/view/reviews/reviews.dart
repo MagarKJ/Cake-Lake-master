@@ -17,7 +17,7 @@ class Reviewpage extends StatelessWidget {
             title1: 'Reviews',
             icon: Icons.arrow_back_ios_new_outlined,
           ),
-          Container(
+          SizedBox(
             //  color: Colors.red,
             height: Get.height * 0.07,
             width: Get.width * 0.88,

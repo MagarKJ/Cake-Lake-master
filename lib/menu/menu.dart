@@ -10,7 +10,7 @@ class MyMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Center(
-        child: Container(
+        child: SizedBox(
           // color: Colors.red,
           width: Get.width * 0.95,
           child: Column(

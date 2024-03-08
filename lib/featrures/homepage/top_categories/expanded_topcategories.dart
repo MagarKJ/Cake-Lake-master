@@ -39,7 +39,7 @@ class _ExpanedTopCategoriesState extends State<ExpanedTopCategories> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-              child: Container(
+              child: SizedBox(
                 //  color: Colors.amber,
                 width: Get.width * 0.96,
                 child: GridView.builder(
@@ -144,7 +144,7 @@ class _ImageItemState extends State<ImageItem> {
           ),
           Padding(
             padding: EdgeInsets.only(left: Get.width * 0.03),
-            child: Container(
+            child: SizedBox(
               width: Get.width * 0.3,
               child: StarRating(
                 initialRating: widget.initialrating,

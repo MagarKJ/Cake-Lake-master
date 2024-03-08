@@ -12,7 +12,7 @@ class OurOffers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.red,
       height: Get.height * 0.55,
       width: Get.width * 0.95,
@@ -27,7 +27,7 @@ class OurOffers extends StatelessWidget {
           ),
           OurOffferList(),
           Center(
-            child: Container(
+            child: SizedBox(
               // color: Colors.red,
               height: Get.height * 0.05,
               width: Get.width * 0.2,

@@ -13,7 +13,7 @@ class OurOffferList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //color: Colors.red,
       height: Get.height * 0.44,
       child: ListView.builder(

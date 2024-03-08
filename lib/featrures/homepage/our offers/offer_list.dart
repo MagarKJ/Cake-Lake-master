@@ -93,7 +93,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 height: Get.height * 0.042,
                 width: Get.width * 0.38,
                 // color: Colors.blue,
@@ -108,7 +108,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 //  color: Colors.orange,
                 height: Get.height * 0.022,
                 width: Get.width * 0.2,
@@ -123,7 +123,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 //  color: Colors.red,
                 height: Get.height * 0.02,
                 width: Get.width * 0.35,

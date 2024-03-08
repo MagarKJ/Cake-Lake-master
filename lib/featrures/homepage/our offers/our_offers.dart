@@ -21,7 +21,7 @@ class _NewArrivalState extends State<NewArrival> {
       width: double.infinity,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             width: Get.width * 0.95,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

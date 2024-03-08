@@ -32,7 +32,6 @@ class _CartPageState extends State<CartPage> {
     } else {
       // Handle the case where no products are selected before navigating.
       // You can show a message or take appropriate action.
-      print('No products selected for payment.');
     }
   }
 
@@ -78,7 +77,7 @@ class _CartPageState extends State<CartPage> {
               // Wrap the ListView.builder with Expanded
               child: Obx(
                 // The body is wrapped in an Obx widget, which ensures that the UI is rebuilt whenever the observed state in CartController changes.
-                () => Container(
+                () => SizedBox(
                   width: Get.width * 0.96,
                   // color: Colors.red,
                   child: Stack(
@@ -99,7 +98,7 @@ class _CartPageState extends State<CartPage> {
                                     ),
                                     borderRadius: BorderRadius.circular(10)),
                                 child: ListTile(
-                                  title: Container(
+                                  title: SizedBox(
                                     //  color: Colors.amber,
                                     height: Get.height * 0.15,
                                     width: Get.width * 0.9,
@@ -107,7 +106,7 @@ class _CartPageState extends State<CartPage> {
                                       children: [
                                         Image.asset(product.image,
                                             fit: BoxFit.cover),
-                                        Container(
+                                        SizedBox(
                                           // color: Colors.red,
                                           width: Get.width * 0.5,
                                           child: Column(
@@ -207,7 +206,6 @@ class _CartPageState extends State<CartPage> {
                                   child: IconButton(
                                     onPressed: () {
                                       _cartController.removeFromCart(product);
-                                      print('ok');
                                     },
                                     icon: Icon(
                                       Icons.delete_outline,

@@ -24,7 +24,7 @@ class AddReview extends StatelessWidget {
                 icon: Icons.arrow_back_ios_new_outlined,
               ),
               Center(
-                child: Container(
+                child: SizedBox(
                   //color: Colors.red,
                   height: Get.height * 0.1,
                   width: Get.width * 0.6,
@@ -37,7 +37,7 @@ class AddReview extends StatelessWidget {
               SizedBox(
                 height: Get.height * 0.03,
               ),
-              Container(
+              SizedBox(
                 // color: Colors.amber,
                 height: Get.height * 0.4,
                 width: Get.width * 0.9,
@@ -70,7 +70,7 @@ class AddReview extends StatelessWidget {
               SizedBox(
                 height: Get.height * 0.25,
               ),
-              Container(
+              SizedBox(
                 height: Get.height * 0.08,
                 width: Get.width * 0.8,
                 child: CustomButton(

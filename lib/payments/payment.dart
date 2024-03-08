@@ -46,7 +46,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
           children: [
             Expanded(
               child: SingleChildScrollView(
-                child: Container(
+                child: SizedBox(
                   // color: Colors.amber,
                   width: Get.width * 0.92,
 
@@ -71,7 +71,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(
+                            SizedBox(
                               height: Get.height * 0.141,
                               child: Card(
                                 child: Image.asset(
@@ -121,7 +121,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                       SizedBox(
                         height: Get.height * 0.01,
                       ),
-                      Container(
+                      SizedBox(
                         // color: Colors.amber,
                         height: Get.height * 0.67,
                         width: double.infinity,
@@ -261,7 +261,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
                                 color: myLightGrey,
                                 height: 30,
                               ),
-                              SizedBox(),
+                              const SizedBox(),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -327,52 +327,50 @@ class PaymentItems extends StatefulWidget {
 class _PaymentItemsState extends State<PaymentItems> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GestureDetector(
-        onTap: () {
-          widget.onTap();
-          // log(widget.index.toString() + 'index');
-          // log(widget.selectedIndex.toString() + 'selecteddindex');
-        },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              // color: Colors.red,
-              height: Get.height * 0.15,
-              width: Get.width * 0.3,
-              child: Image.asset(
-                widget.paymentmtd.image,
-                fit: BoxFit.scaleDown,
+    return GestureDetector(
+      onTap: () {
+        widget.onTap();
+        // log(widget.index.toString() + 'index');
+        // log(widget.selectedIndex.toString() + 'selecteddindex');
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            // color: Colors.red,
+            height: Get.height * 0.15,
+            width: Get.width * 0.3,
+            child: Image.asset(
+              widget.paymentmtd.image,
+              fit: BoxFit.scaleDown,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: Get.width * 0.01),
+            child: SizedBox(
+              // color: Colors.amber,
+              width: Get.width * 0.45,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.paymentmtd.name,
+                    style: GoogleFonts.poppins(
+                        color: myBrownColor, fontSize: 20),
+                  ),
+                  Text(
+                    widget.paymentmtd.subtitle,
+                    style:
+                        GoogleFonts.poppins(color: myDarkGrey, fontSize: 15),
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: Get.width * 0.01),
-              child: Container(
-                // color: Colors.amber,
-                width: Get.width * 0.45,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.paymentmtd.name,
-                      style: GoogleFonts.poppins(
-                          color: myBrownColor, fontSize: 20),
-                    ),
-                    Text(
-                      widget.paymentmtd.subtitle,
-                      style:
-                          GoogleFonts.poppins(color: myDarkGrey, fontSize: 15),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            widget.selectedIndex == widget.index
-                ? const MyTickButton()
-                : Container()
-          ],
-        ),
+          ),
+          widget.selectedIndex == widget.index
+              ? const MyTickButton()
+              : Container()
+        ],
       ),
     );
   }

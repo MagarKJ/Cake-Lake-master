@@ -27,7 +27,7 @@ class _ExpandedNewArrivalState extends State<ExpandedRecomended> {
         icon: Icons.arrow_back_ios_new_outlined,
       ),
       body: Center(
-        child: Container(
+        child: SizedBox(
           //color: Colors.red,
           width: Get.width * 0.96,
           child: GridView.builder(
@@ -76,7 +76,7 @@ class _ImageItemState extends State<ImageItem> {
       onTap: () {
         Get.to(() => ProductDetails(product: widget.product));
       },
-      child: Container(
+      child: SizedBox(
         //color: Colors.blue,
         height: Get.height * 0.24,
         width: double.infinity,
@@ -96,7 +96,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 height: Get.height * 0.042,
                 width: Get.width * 0.4,
                 // color: Colors.blue,
@@ -111,7 +111,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 // color: Colors.orange,
                 height: Get.height * 0.03,
                 width: Get.width * 0.2,
@@ -126,7 +126,7 @@ class _ImageItemState extends State<ImageItem> {
             ),
             Padding(
               padding: EdgeInsets.only(left: Get.width * 0.03),
-              child: Container(
+              child: SizedBox(
                 width: Get.width * 0.3,
                 child: StarRating(
                   initialRating: widget.initialrating,

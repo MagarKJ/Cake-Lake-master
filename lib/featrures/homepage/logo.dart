@@ -7,14 +7,14 @@ class Mylogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.red,
       height: Get.height * 0.06,
       width: Get.width * 0.93,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             height: Get.height * 0.06,
             child: Image.asset(
               'assets/image/logo.jpg',
@@ -24,7 +24,7 @@ class Mylogo extends StatelessWidget {
           SizedBox(
             width: Get.width * 0.02,
           ),
-          Container(
+          SizedBox(
               height: Get.height * 0.05,
               // color: Colors.blue,
               child: Column(

@@ -46,14 +46,14 @@ class _ExpandedSearchBarState extends State<ExpandedSearchBar> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Center(
-              child: Container(
+              child: SizedBox(
                 //color: Colors.blue,
                 width: Get.width * 0.96,
 
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: Get.width * 0.96,
                       // color: Colors.red,
                       height: Get.height * 0.05,

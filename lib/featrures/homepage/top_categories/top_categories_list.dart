@@ -13,14 +13,14 @@ class TopCategoriesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //color: Colors.black,
       height: Get.height * 0.2,
       width: double.infinity,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 4,
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: Get.width * 0.01),
