@@ -1,4 +1,3 @@
-import 'package:cakelake/bottomnav/bottomnav.dart';
 import 'package:cakelake/cart/cart_controller.dart';
 import 'package:cakelake/splash_screen/splash_screen.dart';
 
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
       home: const Scaffold(
         resizeToAvoidBottomInset:
             false, // bottomnav does not show when keyboard pops
-        body: MyBottomNavigationBar(),
+        body: SplashScreen(),
       ),
     );
   }
